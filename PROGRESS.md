@@ -7,6 +7,53 @@ every file.
 
 ---
 
+## 2026-10-28 — Run full 4-idea ablation suite on real Year-MSD data; fix repo root nesting
+
+**What's in this commit:**
+- Ran `python main.py --task yearmsd --mode ablation --seeds 0 1 2` on the
+  real downloaded `YearPredictionMSD.txt` (131072 train / 10000 val),
+  hybrid population (n0=16 ZO / n1=4 FO), 2000 rounds, 3 seeds. Results
+  (mean +/- std across seeds, final round):
+
+  | config                          | val_loss          | val_R^2            | avg_q |
+  |----------------------------------|-------------------|---------------------|-------|
+  | baseline                         | 0.0222 (+/-0.0040) | -0.4324 (+/-0.2580) | 1.00  |
+  | idea1_variance_weighted_merge    | 0.0120 (+/-0.0001) |  0.2228 (+/-0.0037) | 1.00  |
+  | idea2_adaptive_zo_budget         | 0.0119 (+/-0.0000) |  0.2304 (+/-0.0012) | 10.00 |
+  | idea3_elite_buffer                | 0.0203 (+/-0.0011) | -0.3082 (+/-0.0720) | 1.00  |
+  | idea4_adaptive_mixing             | 0.0169 (+/-0.0014) | -0.0942 (+/-0.0926) | 1.00  |
+
+- **Fixed a repo-structuring bug**: the previous commit (`b5d2f69`) was
+  made without running `git init` inside `hdo-extensions/` itself, so it
+  silently used a pre-existing `.git` at the home directory one level up —
+  every file landed on GitHub nested under `Desktop/hdo-extensions/...`
+  instead of at repo root. Fixed by running `git init` inside the project
+  folder (this creates its own, nearer `.git` that Git prefers, without
+  touching the home-directory one) and re-doing add/commit/branch/remote,
+  then `git push --force` to overwrite the single wrongly-rooted commit
+  already on GitHub (safe here: one throwaway root-commit, no
+  collaborators). New root-commit: `e0a1366`.
+
+**What this shows:** Idea 1 (variance-weighted merge) and Idea 2 (adaptive
+ZO budget) both clearly and substantially beat baseline, and come close to
+matching the all-FO-only population's own quality (R^2≈0.236 from the
+earlier baseline run) — on a *hybrid* ZO/FO population. Idea 3 (elite
+buffer) is statistically indistinguishable from baseline (both strongly
+negative R^2, high variance across seeds). Idea 4 (adaptive mixing) lands
+in between, better than baseline but well short of ideas 1/2. This matches
+the ranking predicted from theory before any code was run. Note: idea 2's
+`avg_q` is pinned at `max_q=10.00` for the whole run — it never settles
+below the cap, so a follow-up sweep with a higher `max_q` could be worth
+trying as future work, to see if it's a genuine equilibrium or just
+hitting the ceiling we set.
+
+**Not done yet:** CIFAR-10 feature extraction hasn't been run; Phase 0
+(authors' repo baseline) hasn't been started; no combination of ideas has
+been tried (out of scope per current plan — stopping at the 4 individual
+ablations).
+
+---
+
 ## 2026-10-28 — Generalize HDO sim across tasks, add 4 novelty extensions, fix eta divergence on Year-MSD
 
 **What's in this commit:**
