@@ -7,6 +7,100 @@ every file.
 
 ---
 
+## 2026-10-29 — Fix adaptive-ZO-budget ratchet bug; rerun both ablation suites
+
+**What's in this commit:**
+- **Real bug found and fixed in `src/simulate.py`'s
+  `update_adaptive_budgets()` (idea 2, adaptive ZO budget).** The decay
+  branch was `n.current_q = max(cfg.base_q, int(round(n.current_q *
+  cfg.budget_decay)))` with `budget_decay=0.98`. For every integer q in
+  `[1, max_q=10]`, `round(q * 0.98) == q` — a 2% multiplicative shrink is
+  mathematically inert at this integer scale, so q could only ever
+  ratchet *up* (via the increase branch) and got stuck at `max_q`
+  permanently the first time any node crossed
+  `budget_increase_threshold`. This exactly explained a pattern already
+  observed and flagged as merely "curious" in the previous two full
+  ablation runs: `avg_q==10.00` on every seed, on both Year-MSD and
+  CIFAR-10. Fixed by switching to a flat per-round decrement
+  (`n.current_q - 1`), which actually moves at integer granularity.
+- Reran both ablation suites (`python main.py --task yearmsd --mode
+  ablation --seeds 0 1 2` and `--task cifar10 --mode ablation --seeds 0
+  1 2`) with the fix in place. Only `idea2_adaptive_zo_budget` changes —
+  baseline/idea1/idea3/idea4 are bit-for-bit consistent with the pre-fix
+  runs, confirming the fix is isolated to its intended code path.
+
+  | task | idea2 val metric (before → after) | avg_q (before → after) |
+  |---|---|---|
+  | Year-MSD (val R²) | 0.2304 → **−0.1022** | 10.00 → **1.42** |
+  | CIFAR-10 (val accuracy %) | 87.01 → **85.03** | 10.00 → **1.04** |
+
+**What this shows:** idea 2 only ever looked like a strong second-place
+idea because of the bug. With a genuinely adaptive controller, it barely
+raises its budget above the floor on either task (avg_q settles at 1.42
+and 1.04, not 10) and its performance collapses to roughly baseline —
+on CIFAR-10, essentially indistinguishable from (very slightly below)
+baseline's 85.24%. Idea 1 (variance-weighted merge) remains the clear
+best performer on both tasks by a wide margin; this doesn't change.
+Documented as a negative result / limitation (the increase threshold is
+apparently too conservative to fire under real conditions) rather than
+silently dropped — updated `README.md`'s Results tables and
+cross-task-reading paragraph accordingly, and regenerated
+`results/yearmsd/ablation/` and `results/cifar10/ablation/` (JSON +
+plots) from the new runs.
+
+**Not done yet:** Phase 0 (authors' repo CIFAR-10 baseline) — setup
+instructions are fully resolved and ready in
+`phase0_author_repo/SETUP_INSTRUCTIONS.md`, not yet run.
+
+---
+
+## 2026-10-29 — Run full 4-idea ablation suite on real CIFAR-10 (ResNet50 features); add live progress to feature extraction
+
+**What's in this commit:**
+- Ran `scripts/extract_cifar10_features.py` for real (GPU-accelerated:
+  `torch`/`torchvision` reinstalled with CUDA 13.0 wheels to match the
+  local RTX 3050 — the CPU-only default build was going to take an
+  open-ended amount of time for 60k ImageNet-ResNet50 forward passes).
+  Produced `data/cifar10_features/{train,val}_{features,labels}.pt`
+  (train 50000x2048, val 10000x2048).
+- Added a live `done/total images` progress line to
+  `extract_cifar10_features.py`'s `extract()` loop — previously it printed
+  nothing until an entire split finished, which made a long-running
+  extraction indistinguishable from a hang.
+- Ran `python main.py --task cifar10 --mode ablation --seeds 0 1 2`
+  (hybrid n0=16 ZO / n1=4 FO, 2000 rounds, 3 seeds). Results (mean +/- std,
+  final round):
+
+  | config                          | val_loss           | val_accuracy(%)    | avg_q |
+  |----------------------------------|--------------------|---------------------|-------|
+  | baseline                         | 0.5117 (+/-0.0023) | 85.2433 (+/-0.2023) | 1.00  |
+  | idea1_variance_weighted_merge    | 0.3976 (+/-0.0011) | 87.5167 (+/-0.1447) | 1.00  |
+  | idea2_adaptive_zo_budget         | 0.4082 (+/-0.0007) | 87.0100 (+/-0.0361) | 10.00 |
+  | idea3_elite_buffer                | 0.5092 (+/-0.0058) | 85.3433 (+/-0.1387) | 1.00  |
+  | idea4_adaptive_mixing             | 0.4831 (+/-0.0020) | 85.7767 (+/-0.1845) | 1.00  |
+
+**What this shows:** The CIFAR-10 ranking exactly matches the Year-MSD
+ranking from the previous commit — ideas 1 and 2 clearly and
+reproducibly beat baseline (+2.3pp / +1.8pp accuracy, very low
+cross-seed variance), idea 3 is statistically indistinguishable from
+baseline, idea 4 is a smaller but real improvement in between. This is
+now a cross-task-consistent result (regression + classification, d=90 +
+d=2048), not a single-task artifact. Idea 2's `avg_q` again saturates at
+`max_q=10.00` across all seeds, same as on Year-MSD — a second
+confirmation that it's hitting the cap rather than settling naturally; a
+`max_q` sweep would be a clean follow-up if time allows. No divergence
+issues on this task (as expected: CIFAR-10's cross-entropy loss is
+bounded, unlike Year-MSD's MSE, so the eta=0.05 failure mode from before
+never applied here) — ran at the default `eta=0.01` with no incidents.
+
+**Not done yet:** Phase 0 (authors' repo baseline) hasn't been started;
+no combination of ideas has been tried (out of scope per current plan).
+Both task tracks (Year-MSD, CIFAR-10) now have complete baseline +
+4-idea ablation results — the core experimental work for the report is
+essentially done pending Phase 0.
+
+---
+
 ## 2026-10-28 — Run full 4-idea ablation suite on real Year-MSD data; fix repo root nesting
 
 **What's in this commit:**

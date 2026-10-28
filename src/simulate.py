@@ -110,7 +110,15 @@ def update_adaptive_budgets(nodes: List[Node], cfg: NoveltyConfig) -> None:
         if n.var_ema > cfg.budget_increase_threshold * pop_mean_var:
             n.current_q = min(cfg.max_q, n.current_q + 1)
         else:
-            n.current_q = max(cfg.base_q, int(round(n.current_q * cfg.budget_decay)))
+            # NOTE: this used to be `int(round(n.current_q * cfg.budget_decay))`
+            # (budget_decay=0.98). For every integer q in [1, max_q=10], a 2%
+            # multiplicative shrink rounds right back to q itself (e.g.
+            # round(10*0.98)=10, round(5*0.98)=5) -- the decay was mathematically
+            # inert at this scale, so q could only ever ratchet UP and got stuck
+            # at max_q permanently once any node crossed the threshold once
+            # (confirmed: avg_q==10.00 on every seed, both tasks). A flat
+            # per-round decrement actually moves at integer granularity.
+            n.current_q = max(cfg.base_q, n.current_q - 1)
 
 
 def run_round(

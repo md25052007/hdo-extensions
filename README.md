@@ -125,9 +125,9 @@ task (loss, metric, consensus potential, adaptive-q) are committed under
 
 | config | val_loss | val_R² | avg_q |
 |---|---|---|---|
-| baseline | 0.0222 (±0.0040) | −0.4324 (±0.2580) | 1.00 |
+| baseline | 0.0222 (±0.0040) | −0.4323 (±0.2580) | 1.00 |
 | **idea1_variance_weighted_merge** | **0.0120** (±0.0001) | **0.2228** (±0.0037) | 1.00 |
-| **idea2_adaptive_zo_budget** | **0.0119** (±0.0000) | **0.2304** (±0.0012) | 10.00 |
+| idea2_adaptive_zo_budget | 0.0171 (±0.0009) | −0.1022 (±0.0597) | 1.42 |
 | idea3_elite_buffer | 0.0203 (±0.0011) | −0.3082 (±0.0720) | 1.00 |
 | idea4_adaptive_mixing | 0.0169 (±0.0014) | −0.0942 (±0.0926) | 1.00 |
 
@@ -139,23 +139,37 @@ task (loss, metric, consensus potential, adaptive-q) are committed under
 |---|---|---|---|
 | baseline | 0.5117 (±0.0023) | 85.24 (±0.20) | 1.00 |
 | **idea1_variance_weighted_merge** | **0.3976** (±0.0011) | **87.52** (±0.14) | 1.00 |
-| **idea2_adaptive_zo_budget** | **0.4082** (±0.0007) | **87.01** (±0.04) | 10.00 |
+| idea2_adaptive_zo_budget | 0.5093 (±0.0029) | 85.03 (±0.09) | 1.04 |
 | idea3_elite_buffer | 0.5092 (±0.0058) | 85.34 (±0.14) | 1.00 |
 | idea4_adaptive_mixing | 0.4831 (±0.0020) | 85.78 (±0.18) | 1.00 |
 
 ![CIFAR-10 ablation: validation accuracy](results/cifar10/ablation/ablation_metric.png)
 
-**Reading these together:** idea 1 (variance-weighted merge) and idea 2
-(adaptive ZO budget) both clearly and reproducibly beat baseline on
-*both* tasks — one regression, one classification, d=90 and d=2048 —
-with tight cross-seed variance, which is the strongest kind of evidence
-a course-project ablation can offer (not a single-task fluke). Idea 3
-(elite buffer) is statistically indistinguishable from baseline on both
-tasks. Idea 4 (adaptive mixing) is a smaller but consistent improvement
-in between. Idea 2's `avg_q` saturates at `max_q=10` on both tasks —
-every run hits the cap rather than settling below it, which is worth a
-follow-up sweep with a higher `max_q` rather than taking 10.00 as a
-natural equilibrium.
+**Reading these together:** idea 1 (variance-weighted merge) is the
+clear, reproducible winner on *both* tasks — one regression, one
+classification, d=90 and d=2048 — with tight cross-seed variance, the
+strongest kind of evidence a course-project ablation can offer (not a
+single-task fluke). Idea 3 (elite buffer) is statistically
+indistinguishable from baseline on both tasks. Idea 4 (adaptive mixing)
+is a smaller but consistent improvement in between.
+
+Idea 2 (adaptive ZO budget) originally *looked* like the second-best
+idea, matching idea 1's gains with `avg_q` pinned at `max_q=10` on every
+seed of both tasks. That was a bug: `update_adaptive_budgets()`'s decay
+branch did `round(current_q * 0.98)`, and for every integer q in
+`[1, 10]` a 2% shrink rounds right back to q itself — the decay was
+mathematically inert, so q could only ratchet upward and got stuck at
+the cap after the first time any node crossed the increase threshold.
+Fixed by switching to a flat per-round decrement (`current_q - 1`); see
+`src/simulate.py`. With a genuinely adaptive controller, `avg_q` settles
+near its floor instead (1.42 on Year-MSD, 1.04 on CIFAR-10) and idea 2's
+performance collapses to roughly baseline on both tasks — the increase
+threshold (`budget_increase_threshold=1.5× the ZO population's mean
+variance`) is apparently too conservative to ever meaningfully raise the
+budget under real conditions. That's a legitimate negative result worth
+stating as a limitation rather than a win: the mechanism as configured
+doesn't help, and a follow-up sweep over the threshold/decay constants
+would be the natural next step rather than retuning `max_q`.
 
 ## Datasets — sources and exact save locations
 
