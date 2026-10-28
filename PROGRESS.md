@@ -7,6 +7,29 @@ every file.
 
 ---
 
+## 2026-10-29 — Remove `phase0_author_repo/` (not implemented, not needed)
+
+**What's in this commit:**
+- Removed `phase0_author_repo/` (setup instructions for running
+  `github.com/ShayanTalaei/HDO` directly as an independent baseline) and
+  every reference to it in `README.md` (`What's in here`, `Project
+  status`). It was never actually run.
+- **Why:** that track would answer "does our reimplementation of plain
+  HDO match the paper's own code/numbers" — a fidelity check on the
+  reproduction, not something the project's actual results depend on.
+  The `baseline` row already present in every ablation table (all four
+  novelty flags off, run with the exact same code/data/seeds/hardware as
+  the four ideas) is the valid apples-to-apples comparison the project
+  needs, and it's already there.
+- No experimental results change — this only removes unimplemented,
+  unused documentation.
+
+**Not done yet:** nothing scoped — Year-MSD and CIFAR-10 ablations (4
+ideas + baseline, 3 seeds each) are the full extent of the project now.
+Report writing is the only remaining step.
+
+---
+
 ## 2026-10-29 — Fix adaptive-ZO-budget ratchet bug; rerun both ablation suites
 
 **What's in this commit:**

@@ -88,9 +88,6 @@ every ablation is a controlled, single-flag diff against that baseline.
   `novelty/config.py` (the four flags), `data_yearmsd.py` /
   `data_cifar10.py` / `data_common.py` (loaders), `aggregate.py` /
   `plot_utils.py` (multi-seed summarizing + plotting).
-- `phase0_author_repo/` — instructions for running the paper's own repo
-  (`github.com/ShayanTalaei/HDO`) directly, as an independent baseline.
-  That repo is cloned elsewhere, not into this one.
 - `scripts/extract_cifar10_features.py` — one-time ResNet50 feature
   extraction for the CIFAR-10 task.
 - `tests/` — 6 unit tests (`test_estimators.py`) plus 2 synthetic
@@ -270,18 +267,16 @@ they catch bugs in the shared novelty code in seconds instead of minutes.
 
 ## Project status
 
-- **Phase 0** (author's-repo baseline, `github.com/ShayanTalaei/HDO` run
-  directly) — optional; not run. The `baseline` row already in every
-  ablation table above (all four novelty flags off, same
-  code/data/seeds/hardware as the four ideas) is the apples-to-apples
-  comparison the project actually needs, so this isn't required — kept
-  here as a ready-to-run option, not a pending task. Instructions in
-  `phase0_author_repo/SETUP_INSTRUCTIONS.md`.
-- **Phase 1** (Year-MSD) — baseline + full 4-idea ablation suite done on
-  real data, 3 seeds. See Results above.
-- **Phase 2** (CIFAR-10) — full 4-idea ablation suite done on real data
-  (ResNet50 features), 3 seeds. See Results above.
+- **Year-MSD** — baseline + full 4-idea ablation suite done on real
+  data, 3 seeds. See Results above.
+- **CIFAR-10** — full 4-idea ablation suite done on real data (ResNet50
+  features), 3 seeds. See Results above.
 - No combination of ideas is planned — the project stops at the 4
   individual ablations per the agreed plan.
+- An independent baseline from running the paper's own repo
+  (`github.com/ShayanTalaei/HDO`) directly was considered and not
+  implemented — the `baseline` row already in every ablation table above
+  (all four novelty flags off, same code/data/seeds/hardware as the four
+  ideas) is the apples-to-apples comparison the project needs.
 
 See `PROGRESS.md` for the commit-by-commit log of how this was built.
