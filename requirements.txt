@@ -1,3 +1,12 @@
+# CPU-generic versions. If you have an NVIDIA GPU (recommended for
+# scripts/extract_cifar10_features.py — the HDO simulation itself in
+# main.py is CPU-bound regardless, its model is a single linear layer),
+# don't just `pip install -r requirements.txt`: that installs the CPU-only
+# torch/torchvision build. Instead install the CUDA build matching your
+# driver first, e.g.:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+# (see README.md's CIFAR-10 section for how to pick the right cuXXX suffix),
+# then install the rest below as usual.
 torch>=2.2
 torchvision>=0.17
 matplotlib>=3.7
