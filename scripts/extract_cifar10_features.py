@@ -39,11 +39,16 @@ def build_feature_extractor() -> nn.Module:
 @torch.no_grad()
 def extract(loader: DataLoader, model: nn.Module, device: str):
     feats, labels = [], []
+    total = len(loader.dataset)
+    done = 0
     for images, targets in loader:
         images = images.to(device)
         out = model(images)
         feats.append(out.cpu())
         labels.append(targets)
+        done += images.size(0)
+        print(f"    {done}/{total} images", end="\r", flush=True)
+    print()
     return torch.cat(feats, dim=0), torch.cat(labels, dim=0)
 
 
