@@ -1,0 +1,358 @@
+PS C:\Users\donth\Desktop\hdo-extensions> python main.py --task yearmsd --mode ablation --seeds 0 1 2
+Task: year-msd | input_dim=90 | train=131072 | val=10000
+
+=== baseline | hybrid n0=16 n1=4 | seed=0 ===
+[baseline/seed0] Round 0/2000 | Val Loss: 1.0107 | Val R^2: -64.2502 | Gamma_t: 0.000000
+[baseline/seed0] Round 100/2000 | Val Loss: 0.0878 | Val R^2: -4.6705 | Gamma_t: 0.009580
+[baseline/seed0] Round 200/2000 | Val Loss: 0.0331 | Val R^2: -1.1391 | Gamma_t: 0.011080
+[baseline/seed0] Round 300/2000 | Val Loss: 0.0237 | Val R^2: -0.5323 | Gamma_t: 0.008407
+[baseline/seed0] Round 400/2000 | Val Loss: 0.0208 | Val R^2: -0.3442 | Gamma_t: 0.003004
+[baseline/seed0] Round 500/2000 | Val Loss: 0.0195 | Val R^2: -0.2585 | Gamma_t: 0.002509
+[baseline/seed0] Round 600/2000 | Val Loss: 0.0199 | Val R^2: -0.2860 | Gamma_t: 0.007051
+[baseline/seed0] Round 700/2000 | Val Loss: 0.0200 | Val R^2: -0.2884 | Gamma_t: 0.010752
+[baseline/seed0] Round 800/2000 | Val Loss: 0.0196 | Val R^2: -0.2648 | Gamma_t: 0.004899
+[baseline/seed0] Round 900/2000 | Val Loss: 0.0197 | Val R^2: -0.2738 | Gamma_t: 0.002435
+[baseline/seed0] Round 1000/2000 | Val Loss: 0.0194 | Val R^2: -0.2546 | Gamma_t: 0.002231
+[baseline/seed0] Round 1100/2000 | Val Loss: 0.0185 | Val R^2: -0.1936 | Gamma_t: 0.005737
+[baseline/seed0] Round 1200/2000 | Val Loss: 0.0173 | Val R^2: -0.1183 | Gamma_t: 0.001669
+[baseline/seed0] Round 1300/2000 | Val Loss: 0.0183 | Val R^2: -0.1799 | Gamma_t: 0.011021
+[baseline/seed0] Round 1400/2000 | Val Loss: 0.0166 | Val R^2: -0.0748 | Gamma_t: 0.006003
+[baseline/seed0] Round 1500/2000 | Val Loss: 0.0183 | Val R^2: -0.1812 | Gamma_t: 0.003892
+[baseline/seed0] Round 1600/2000 | Val Loss: 0.0167 | Val R^2: -0.0813 | Gamma_t: 0.003206
+[baseline/seed0] Round 1700/2000 | Val Loss: 0.0174 | Val R^2: -0.1225 | Gamma_t: 0.003864
+[baseline/seed0] Round 1800/2000 | Val Loss: 0.0177 | Val R^2: -0.1453 | Gamma_t: 0.003465
+[baseline/seed0] Round 1900/2000 | Val Loss: 0.0196 | Val R^2: -0.2641 | Gamma_t: 0.003417
+[baseline/seed0] Round 2000/2000 | Val Loss: 0.0260 | Val R^2: -0.6809 | Gamma_t: 0.004957
+
+=== baseline | hybrid n0=16 n1=4 | seed=1 ===
+[baseline/seed1] Round 0/2000 | Val Loss: 0.9201 | Val R^2: -58.3994 | Gamma_t: 0.000000
+[baseline/seed1] Round 100/2000 | Val Loss: 0.0803 | Val R^2: -4.1848 | Gamma_t: 0.012016
+[baseline/seed1] Round 200/2000 | Val Loss: 0.0389 | Val R^2: -1.5114 | Gamma_t: 0.004650
+[baseline/seed1] Round 300/2000 | Val Loss: 0.0259 | Val R^2: -0.6725 | Gamma_t: 0.003966
+[baseline/seed1] Round 400/2000 | Val Loss: 0.0204 | Val R^2: -0.3192 | Gamma_t: 0.003918
+[baseline/seed1] Round 500/2000 | Val Loss: 0.0197 | Val R^2: -0.2731 | Gamma_t: 0.008405
+[baseline/seed1] Round 600/2000 | Val Loss: 0.0199 | Val R^2: -0.2850 | Gamma_t: 0.003032
+[baseline/seed1] Round 700/2000 | Val Loss: 0.0171 | Val R^2: -0.1034 | Gamma_t: 0.005117
+[baseline/seed1] Round 800/2000 | Val Loss: 0.0196 | Val R^2: -0.2659 | Gamma_t: 0.003885
+[baseline/seed1] Round 900/2000 | Val Loss: 0.0195 | Val R^2: -0.2591 | Gamma_t: 0.006967
+[baseline/seed1] Round 1000/2000 | Val Loss: 0.0180 | Val R^2: -0.1609 | Gamma_t: 0.003703
+[baseline/seed1] Round 1100/2000 | Val Loss: 0.0181 | Val R^2: -0.1692 | Gamma_t: 0.007714
+[baseline/seed1] Round 1200/2000 | Val Loss: 0.0181 | Val R^2: -0.1695 | Gamma_t: 0.008020
+[baseline/seed1] Round 1300/2000 | Val Loss: 0.0176 | Val R^2: -0.1391 | Gamma_t: 0.003962
+[baseline/seed1] Round 1400/2000 | Val Loss: 0.0188 | Val R^2: -0.2131 | Gamma_t: 0.002451
+[baseline/seed1] Round 1500/2000 | Val Loss: 0.0175 | Val R^2: -0.1283 | Gamma_t: 0.001960
+[baseline/seed1] Round 1600/2000 | Val Loss: 0.0157 | Val R^2: -0.0162 | Gamma_t: 0.001887
+[baseline/seed1] Round 1700/2000 | Val Loss: 0.0183 | Val R^2: -0.1789 | Gamma_t: 0.003883
+[baseline/seed1] Round 1800/2000 | Val Loss: 0.0181 | Val R^2: -0.1686 | Gamma_t: 0.003861
+[baseline/seed1] Round 1900/2000 | Val Loss: 0.0175 | Val R^2: -0.1266 | Gamma_t: 0.001588
+[baseline/seed1] Round 2000/2000 | Val Loss: 0.0181 | Val R^2: -0.1659 | Gamma_t: 0.005360
+
+=== baseline | hybrid n0=16 n1=4 | seed=2 ===
+[baseline/seed2] Round 0/2000 | Val Loss: 0.9930 | Val R^2: -63.1032 | Gamma_t: 0.000000
+[baseline/seed2] Round 100/2000 | Val Loss: 0.0692 | Val R^2: -3.4677 | Gamma_t: 0.016458
+[baseline/seed2] Round 200/2000 | Val Loss: 0.0314 | Val R^2: -1.0279 | Gamma_t: 0.009078
+[baseline/seed2] Round 300/2000 | Val Loss: 0.0253 | Val R^2: -0.6332 | Gamma_t: 0.004781
+[baseline/seed2] Round 400/2000 | Val Loss: 0.0199 | Val R^2: -0.2852 | Gamma_t: 0.004211
+[baseline/seed2] Round 500/2000 | Val Loss: 0.0210 | Val R^2: -0.3585 | Gamma_t: 0.003297
+[baseline/seed2] Round 600/2000 | Val Loss: 0.0224 | Val R^2: -0.4440 | Gamma_t: 0.003639
+[baseline/seed2] Round 700/2000 | Val Loss: 0.0219 | Val R^2: -0.4142 | Gamma_t: 0.005254
+[baseline/seed2] Round 800/2000 | Val Loss: 0.0205 | Val R^2: -0.3257 | Gamma_t: 0.005343
+[baseline/seed2] Round 900/2000 | Val Loss: 0.0229 | Val R^2: -0.4808 | Gamma_t: 0.004123
+[baseline/seed2] Round 1000/2000 | Val Loss: 0.0202 | Val R^2: -0.3070 | Gamma_t: 0.008239
+[baseline/seed2] Round 1100/2000 | Val Loss: 0.0174 | Val R^2: -0.1240 | Gamma_t: 0.002445
+[baseline/seed2] Round 1200/2000 | Val Loss: 0.0159 | Val R^2: -0.0282 | Gamma_t: 0.003786
+[baseline/seed2] Round 1300/2000 | Val Loss: 0.0174 | Val R^2: -0.1249 | Gamma_t: 0.005502
+[baseline/seed2] Round 1400/2000 | Val Loss: 0.0164 | Val R^2: -0.0604 | Gamma_t: 0.002519
+[baseline/seed2] Round 1500/2000 | Val Loss: 0.0206 | Val R^2: -0.3323 | Gamma_t: 0.002770
+[baseline/seed2] Round 1600/2000 | Val Loss: 0.0173 | Val R^2: -0.1146 | Gamma_t: 0.002804
+[baseline/seed2] Round 1700/2000 | Val Loss: 0.0168 | Val R^2: -0.0834 | Gamma_t: 0.003627
+[baseline/seed2] Round 1800/2000 | Val Loss: 0.0183 | Val R^2: -0.1832 | Gamma_t: 0.004570
+[baseline/seed2] Round 1900/2000 | Val Loss: 0.0203 | Val R^2: -0.3126 | Gamma_t: 0.002678
+[baseline/seed2] Round 2000/2000 | Val Loss: 0.0225 | Val R^2: -0.4502 | Gamma_t: 0.011144
+
+=== idea1_variance_weighted_merge | hybrid n0=16 n1=4 | seed=0 ===
+[idea1_variance_weighted_merge/seed0] Round 0/2000 | Val Loss: 1.0107 | Val R^2: -64.2502 | Gamma_t: 0.000000
+[idea1_variance_weighted_merge/seed0] Round 100/2000 | Val Loss: 0.0429 | Val R^2: -1.7687 | Gamma_t: 0.006565
+[idea1_variance_weighted_merge/seed0] Round 200/2000 | Val Loss: 0.0175 | Val R^2: -0.1326 | Gamma_t: 0.001024
+[idea1_variance_weighted_merge/seed0] Round 300/2000 | Val Loss: 0.0145 | Val R^2: 0.0643 | Gamma_t: 0.001334
+[idea1_variance_weighted_merge/seed0] Round 400/2000 | Val Loss: 0.0132 | Val R^2: 0.1483 | Gamma_t: 0.001359
+[idea1_variance_weighted_merge/seed0] Round 500/2000 | Val Loss: 0.0128 | Val R^2: 0.1751 | Gamma_t: 0.000865
+[idea1_variance_weighted_merge/seed0] Round 600/2000 | Val Loss: 0.0124 | Val R^2: 0.1990 | Gamma_t: 0.001154
+[idea1_variance_weighted_merge/seed0] Round 700/2000 | Val Loss: 0.0122 | Val R^2: 0.2124 | Gamma_t: 0.000988
+[idea1_variance_weighted_merge/seed0] Round 800/2000 | Val Loss: 0.0122 | Val R^2: 0.2146 | Gamma_t: 0.000575
+[idea1_variance_weighted_merge/seed0] Round 900/2000 | Val Loss: 0.0121 | Val R^2: 0.2174 | Gamma_t: 0.001082
+[idea1_variance_weighted_merge/seed0] Round 1000/2000 | Val Loss: 0.0123 | Val R^2: 0.2069 | Gamma_t: 0.001024
+[idea1_variance_weighted_merge/seed0] Round 1100/2000 | Val Loss: 0.0121 | Val R^2: 0.2205 | Gamma_t: 0.000941
+[idea1_variance_weighted_merge/seed0] Round 1200/2000 | Val Loss: 0.0121 | Val R^2: 0.2215 | Gamma_t: 0.001131
+[idea1_variance_weighted_merge/seed0] Round 1300/2000 | Val Loss: 0.0123 | Val R^2: 0.2090 | Gamma_t: 0.004395
+[idea1_variance_weighted_merge/seed0] Round 1400/2000 | Val Loss: 0.0120 | Val R^2: 0.2240 | Gamma_t: 0.000692
+[idea1_variance_weighted_merge/seed0] Round 1500/2000 | Val Loss: 0.0123 | Val R^2: 0.2073 | Gamma_t: 0.001519
+[idea1_variance_weighted_merge/seed0] Round 1600/2000 | Val Loss: 0.0120 | Val R^2: 0.2235 | Gamma_t: 0.001184
+[idea1_variance_weighted_merge/seed0] Round 1700/2000 | Val Loss: 0.0121 | Val R^2: 0.2187 | Gamma_t: 0.001254
+[idea1_variance_weighted_merge/seed0] Round 1800/2000 | Val Loss: 0.0120 | Val R^2: 0.2228 | Gamma_t: 0.000756
+[idea1_variance_weighted_merge/seed0] Round 1900/2000 | Val Loss: 0.0120 | Val R^2: 0.2228 | Gamma_t: 0.001016
+[idea1_variance_weighted_merge/seed0] Round 2000/2000 | Val Loss: 0.0120 | Val R^2: 0.2261 | Gamma_t: 0.000859
+
+=== idea1_variance_weighted_merge | hybrid n0=16 n1=4 | seed=1 ===
+[idea1_variance_weighted_merge/seed1] Round 0/2000 | Val Loss: 0.9201 | Val R^2: -58.3994 | Gamma_t: 0.000000
+[idea1_variance_weighted_merge/seed1] Round 100/2000 | Val Loss: 0.0444 | Val R^2: -1.8682 | Gamma_t: 0.004805
+[idea1_variance_weighted_merge/seed1] Round 200/2000 | Val Loss: 0.0177 | Val R^2: -0.1410 | Gamma_t: 0.002117
+[idea1_variance_weighted_merge/seed1] Round 300/2000 | Val Loss: 0.0143 | Val R^2: 0.0739 | Gamma_t: 0.002179
+[idea1_variance_weighted_merge/seed1] Round 400/2000 | Val Loss: 0.0130 | Val R^2: 0.1627 | Gamma_t: 0.000648
+[idea1_variance_weighted_merge/seed1] Round 500/2000 | Val Loss: 0.0125 | Val R^2: 0.1907 | Gamma_t: 0.001104
+[idea1_variance_weighted_merge/seed1] Round 600/2000 | Val Loss: 0.0124 | Val R^2: 0.1986 | Gamma_t: 0.000526
+[idea1_variance_weighted_merge/seed1] Round 700/2000 | Val Loss: 0.0122 | Val R^2: 0.2121 | Gamma_t: 0.000863
+[idea1_variance_weighted_merge/seed1] Round 800/2000 | Val Loss: 0.0121 | Val R^2: 0.2183 | Gamma_t: 0.000575
+[idea1_variance_weighted_merge/seed1] Round 900/2000 | Val Loss: 0.0122 | Val R^2: 0.2110 | Gamma_t: 0.001083
+[idea1_variance_weighted_merge/seed1] Round 1000/2000 | Val Loss: 0.0120 | Val R^2: 0.2255 | Gamma_t: 0.000715
+[idea1_variance_weighted_merge/seed1] Round 1100/2000 | Val Loss: 0.0121 | Val R^2: 0.2159 | Gamma_t: 0.001608
+[idea1_variance_weighted_merge/seed1] Round 1200/2000 | Val Loss: 0.0122 | Val R^2: 0.2146 | Gamma_t: 0.001069
+[idea1_variance_weighted_merge/seed1] Round 1300/2000 | Val Loss: 0.0120 | Val R^2: 0.2269 | Gamma_t: 0.000619
+[idea1_variance_weighted_merge/seed1] Round 1400/2000 | Val Loss: 0.0119 | Val R^2: 0.2290 | Gamma_t: 0.000571
+[idea1_variance_weighted_merge/seed1] Round 1500/2000 | Val Loss: 0.0121 | Val R^2: 0.2191 | Gamma_t: 0.001080
+[idea1_variance_weighted_merge/seed1] Round 1600/2000 | Val Loss: 0.0121 | Val R^2: 0.2220 | Gamma_t: 0.000734
+[idea1_variance_weighted_merge/seed1] Round 1700/2000 | Val Loss: 0.0120 | Val R^2: 0.2249 | Gamma_t: 0.000704
+[idea1_variance_weighted_merge/seed1] Round 1800/2000 | Val Loss: 0.0120 | Val R^2: 0.2280 | Gamma_t: 0.000709
+[idea1_variance_weighted_merge/seed1] Round 1900/2000 | Val Loss: 0.0120 | Val R^2: 0.2252 | Gamma_t: 0.000861
+[idea1_variance_weighted_merge/seed1] Round 2000/2000 | Val Loss: 0.0120 | Val R^2: 0.2234 | Gamma_t: 0.000959
+
+=== idea1_variance_weighted_merge | hybrid n0=16 n1=4 | seed=2 ===
+[idea1_variance_weighted_merge/seed2] Round 0/2000 | Val Loss: 0.9930 | Val R^2: -63.1032 | Gamma_t: 0.000000
+[idea1_variance_weighted_merge/seed2] Round 100/2000 | Val Loss: 0.0455 | Val R^2: -1.9365 | Gamma_t: 0.004325
+[idea1_variance_weighted_merge/seed2] Round 200/2000 | Val Loss: 0.0188 | Val R^2: -0.2120 | Gamma_t: 0.002124
+[idea1_variance_weighted_merge/seed2] Round 300/2000 | Val Loss: 0.0146 | Val R^2: 0.0593 | Gamma_t: 0.001539
+[idea1_variance_weighted_merge/seed2] Round 400/2000 | Val Loss: 0.0132 | Val R^2: 0.1476 | Gamma_t: 0.001241
+[idea1_variance_weighted_merge/seed2] Round 500/2000 | Val Loss: 0.0128 | Val R^2: 0.1712 | Gamma_t: 0.001337
+[idea1_variance_weighted_merge/seed2] Round 600/2000 | Val Loss: 0.0125 | Val R^2: 0.1960 | Gamma_t: 0.000701
+[idea1_variance_weighted_merge/seed2] Round 700/2000 | Val Loss: 0.0123 | Val R^2: 0.2068 | Gamma_t: 0.000919
+[idea1_variance_weighted_merge/seed2] Round 800/2000 | Val Loss: 0.0122 | Val R^2: 0.2115 | Gamma_t: 0.000508
+[idea1_variance_weighted_merge/seed2] Round 900/2000 | Val Loss: 0.0122 | Val R^2: 0.2139 | Gamma_t: 0.001208
+[idea1_variance_weighted_merge/seed2] Round 1000/2000 | Val Loss: 0.0121 | Val R^2: 0.2195 | Gamma_t: 0.001086
+[idea1_variance_weighted_merge/seed2] Round 1100/2000 | Val Loss: 0.0120 | Val R^2: 0.2245 | Gamma_t: 0.000721
+[idea1_variance_weighted_merge/seed2] Round 1200/2000 | Val Loss: 0.0123 | Val R^2: 0.2085 | Gamma_t: 0.002279
+[idea1_variance_weighted_merge/seed2] Round 1300/2000 | Val Loss: 0.0121 | Val R^2: 0.2174 | Gamma_t: 0.001778
+[idea1_variance_weighted_merge/seed2] Round 1400/2000 | Val Loss: 0.0121 | Val R^2: 0.2172 | Gamma_t: 0.001284
+[idea1_variance_weighted_merge/seed2] Round 1500/2000 | Val Loss: 0.0121 | Val R^2: 0.2180 | Gamma_t: 0.001225
+[idea1_variance_weighted_merge/seed2] Round 1600/2000 | Val Loss: 0.0121 | Val R^2: 0.2165 | Gamma_t: 0.000668
+[idea1_variance_weighted_merge/seed2] Round 1700/2000 | Val Loss: 0.0120 | Val R^2: 0.2282 | Gamma_t: 0.000693
+[idea1_variance_weighted_merge/seed2] Round 1800/2000 | Val Loss: 0.0121 | Val R^2: 0.2168 | Gamma_t: 0.000935
+[idea1_variance_weighted_merge/seed2] Round 1900/2000 | Val Loss: 0.0121 | Val R^2: 0.2181 | Gamma_t: 0.000746
+[idea1_variance_weighted_merge/seed2] Round 2000/2000 | Val Loss: 0.0121 | Val R^2: 0.2188 | Gamma_t: 0.001451
+
+=== idea2_adaptive_zo_budget | hybrid n0=16 n1=4 | seed=0 ===
+[idea2_adaptive_zo_budget/seed0] Round 0/2000 | Val Loss: 1.0107 | Val R^2: -64.2502 | Gamma_t: 0.000000
+[idea2_adaptive_zo_budget/seed0] Round 100/2000 | Val Loss: 0.0688 | Val R^2: -3.4445 | Gamma_t: 0.010062
+[idea2_adaptive_zo_budget/seed0] Round 200/2000 | Val Loss: 0.0409 | Val R^2: -1.6380 | Gamma_t: 0.005977
+[idea2_adaptive_zo_budget/seed0] Round 300/2000 | Val Loss: 0.0257 | Val R^2: -0.6601 | Gamma_t: 0.003905
+[idea2_adaptive_zo_budget/seed0] Round 400/2000 | Val Loss: 0.0242 | Val R^2: -0.5615 | Gamma_t: 0.008705
+[idea2_adaptive_zo_budget/seed0] Round 500/2000 | Val Loss: 0.0219 | Val R^2: -0.4122 | Gamma_t: 0.002218
+[idea2_adaptive_zo_budget/seed0] Round 600/2000 | Val Loss: 0.0215 | Val R^2: -0.3888 | Gamma_t: 0.007717
+[idea2_adaptive_zo_budget/seed0] Round 700/2000 | Val Loss: 0.0185 | Val R^2: -0.1958 | Gamma_t: 0.001734
+[idea2_adaptive_zo_budget/seed0] Round 800/2000 | Val Loss: 0.0198 | Val R^2: -0.2802 | Gamma_t: 0.005456
+[idea2_adaptive_zo_budget/seed0] Round 900/2000 | Val Loss: 0.0212 | Val R^2: -0.3699 | Gamma_t: 0.003305
+[idea2_adaptive_zo_budget/seed0] Round 1000/2000 | Val Loss: 0.0202 | Val R^2: -0.3067 | Gamma_t: 0.002893
+[idea2_adaptive_zo_budget/seed0] Round 1100/2000 | Val Loss: 0.0191 | Val R^2: -0.2338 | Gamma_t: 0.002363
+[idea2_adaptive_zo_budget/seed0] Round 1200/2000 | Val Loss: 0.0174 | Val R^2: -0.1251 | Gamma_t: 0.003477
+[idea2_adaptive_zo_budget/seed0] Round 1300/2000 | Val Loss: 0.0168 | Val R^2: -0.0860 | Gamma_t: 0.002075
+[idea2_adaptive_zo_budget/seed0] Round 1400/2000 | Val Loss: 0.0179 | Val R^2: -0.1582 | Gamma_t: 0.005294
+[idea2_adaptive_zo_budget/seed0] Round 1500/2000 | Val Loss: 0.0205 | Val R^2: -0.3229 | Gamma_t: 0.004237
+[idea2_adaptive_zo_budget/seed0] Round 1600/2000 | Val Loss: 0.0194 | Val R^2: -0.2533 | Gamma_t: 0.002434
+[idea2_adaptive_zo_budget/seed0] Round 1700/2000 | Val Loss: 0.0162 | Val R^2: -0.0490 | Gamma_t: 0.001747
+[idea2_adaptive_zo_budget/seed0] Round 1800/2000 | Val Loss: 0.0158 | Val R^2: -0.0193 | Gamma_t: 0.001703
+[idea2_adaptive_zo_budget/seed0] Round 1900/2000 | Val Loss: 0.0167 | Val R^2: -0.0797 | Gamma_t: 0.002925
+[idea2_adaptive_zo_budget/seed0] Round 2000/2000 | Val Loss: 0.0160 | Val R^2: -0.0347 | Gamma_t: 0.001727
+
+=== idea2_adaptive_zo_budget | hybrid n0=16 n1=4 | seed=1 ===
+[idea2_adaptive_zo_budget/seed1] Round 0/2000 | Val Loss: 0.9201 | Val R^2: -58.3994 | Gamma_t: 0.000000
+[idea2_adaptive_zo_budget/seed1] Round 100/2000 | Val Loss: 0.0690 | Val R^2: -3.4528 | Gamma_t: 0.014629
+[idea2_adaptive_zo_budget/seed1] Round 200/2000 | Val Loss: 0.0423 | Val R^2: -1.7333 | Gamma_t: 0.007037
+[idea2_adaptive_zo_budget/seed1] Round 300/2000 | Val Loss: 0.0309 | Val R^2: -0.9926 | Gamma_t: 0.009809
+[idea2_adaptive_zo_budget/seed1] Round 400/2000 | Val Loss: 0.0256 | Val R^2: -0.6506 | Gamma_t: 0.003203
+[idea2_adaptive_zo_budget/seed1] Round 500/2000 | Val Loss: 0.0209 | Val R^2: -0.3511 | Gamma_t: 0.003358
+[idea2_adaptive_zo_budget/seed1] Round 600/2000 | Val Loss: 0.0179 | Val R^2: -0.1551 | Gamma_t: 0.003736
+[idea2_adaptive_zo_budget/seed1] Round 700/2000 | Val Loss: 0.0194 | Val R^2: -0.2550 | Gamma_t: 0.014809
+[idea2_adaptive_zo_budget/seed1] Round 800/2000 | Val Loss: 0.0187 | Val R^2: -0.2050 | Gamma_t: 0.003043
+[idea2_adaptive_zo_budget/seed1] Round 900/2000 | Val Loss: 0.0174 | Val R^2: -0.1217 | Gamma_t: 0.002015
+[idea2_adaptive_zo_budget/seed1] Round 1000/2000 | Val Loss: 0.0194 | Val R^2: -0.2495 | Gamma_t: 0.004031
+[idea2_adaptive_zo_budget/seed1] Round 1100/2000 | Val Loss: 0.0176 | Val R^2: -0.1354 | Gamma_t: 0.009721
+[idea2_adaptive_zo_budget/seed1] Round 1200/2000 | Val Loss: 0.0190 | Val R^2: -0.2253 | Gamma_t: 0.005758
+[idea2_adaptive_zo_budget/seed1] Round 1300/2000 | Val Loss: 0.0159 | Val R^2: -0.0251 | Gamma_t: 0.001473
+[idea2_adaptive_zo_budget/seed1] Round 1400/2000 | Val Loss: 0.0177 | Val R^2: -0.1457 | Gamma_t: 0.002284
+[idea2_adaptive_zo_budget/seed1] Round 1500/2000 | Val Loss: 0.0160 | Val R^2: -0.0334 | Gamma_t: 0.001763
+[idea2_adaptive_zo_budget/seed1] Round 1600/2000 | Val Loss: 0.0151 | Val R^2: 0.0248 | Gamma_t: 0.002521
+[idea2_adaptive_zo_budget/seed1] Round 1700/2000 | Val Loss: 0.0178 | Val R^2: -0.1487 | Gamma_t: 0.004201
+[idea2_adaptive_zo_budget/seed1] Round 1800/2000 | Val Loss: 0.0158 | Val R^2: -0.0196 | Gamma_t: 0.002431
+[idea2_adaptive_zo_budget/seed1] Round 1900/2000 | Val Loss: 0.0157 | Val R^2: -0.0149 | Gamma_t: 0.003737
+[idea2_adaptive_zo_budget/seed1] Round 2000/2000 | Val Loss: 0.0174 | Val R^2: -0.1233 | Gamma_t: 0.001519
+
+=== idea2_adaptive_zo_budget | hybrid n0=16 n1=4 | seed=2 ===
+[idea2_adaptive_zo_budget/seed2] Round 0/2000 | Val Loss: 0.9930 | Val R^2: -63.1032 | Gamma_t: 0.000000
+[idea2_adaptive_zo_budget/seed2] Round 100/2000 | Val Loss: 0.0746 | Val R^2: -3.8143 | Gamma_t: 0.011761
+[idea2_adaptive_zo_budget/seed2] Round 200/2000 | Val Loss: 0.0396 | Val R^2: -1.5547 | Gamma_t: 0.010289
+[idea2_adaptive_zo_budget/seed2] Round 300/2000 | Val Loss: 0.0262 | Val R^2: -0.6942 | Gamma_t: 0.004735
+[idea2_adaptive_zo_budget/seed2] Round 400/2000 | Val Loss: 0.0213 | Val R^2: -0.3757 | Gamma_t: 0.002479
+[idea2_adaptive_zo_budget/seed2] Round 500/2000 | Val Loss: 0.0198 | Val R^2: -0.2812 | Gamma_t: 0.003432
+[idea2_adaptive_zo_budget/seed2] Round 600/2000 | Val Loss: 0.0189 | Val R^2: -0.2201 | Gamma_t: 0.005877
+[idea2_adaptive_zo_budget/seed2] Round 700/2000 | Val Loss: 0.0184 | Val R^2: -0.1865 | Gamma_t: 0.003392
+[idea2_adaptive_zo_budget/seed2] Round 800/2000 | Val Loss: 0.0180 | Val R^2: -0.1602 | Gamma_t: 0.006937
+[idea2_adaptive_zo_budget/seed2] Round 900/2000 | Val Loss: 0.0160 | Val R^2: -0.0351 | Gamma_t: 0.001938
+[idea2_adaptive_zo_budget/seed2] Round 1000/2000 | Val Loss: 0.0180 | Val R^2: -0.1619 | Gamma_t: 0.010179
+[idea2_adaptive_zo_budget/seed2] Round 1100/2000 | Val Loss: 0.0161 | Val R^2: -0.0406 | Gamma_t: 0.005413
+[idea2_adaptive_zo_budget/seed2] Round 1200/2000 | Val Loss: 0.0189 | Val R^2: -0.2205 | Gamma_t: 0.005160
+[idea2_adaptive_zo_budget/seed2] Round 1300/2000 | Val Loss: 0.0179 | Val R^2: -0.1568 | Gamma_t: 0.003964
+[idea2_adaptive_zo_budget/seed2] Round 1400/2000 | Val Loss: 0.0172 | Val R^2: -0.1111 | Gamma_t: 0.002728
+[idea2_adaptive_zo_budget/seed2] Round 1500/2000 | Val Loss: 0.0170 | Val R^2: -0.0979 | Gamma_t: 0.002295
+[idea2_adaptive_zo_budget/seed2] Round 1600/2000 | Val Loss: 0.0182 | Val R^2: -0.1743 | Gamma_t: 0.001713
+[idea2_adaptive_zo_budget/seed2] Round 1700/2000 | Val Loss: 0.0160 | Val R^2: -0.0328 | Gamma_t: 0.006172
+[idea2_adaptive_zo_budget/seed2] Round 1800/2000 | Val Loss: 0.0172 | Val R^2: -0.1093 | Gamma_t: 0.005759
+[idea2_adaptive_zo_budget/seed2] Round 1900/2000 | Val Loss: 0.0161 | Val R^2: -0.0389 | Gamma_t: 0.002391
+[idea2_adaptive_zo_budget/seed2] Round 2000/2000 | Val Loss: 0.0178 | Val R^2: -0.1485 | Gamma_t: 0.003763
+
+=== idea3_elite_buffer | hybrid n0=16 n1=4 | seed=0 ===
+[idea3_elite_buffer/seed0] Round 0/2000 | Val Loss: 1.0107 | Val R^2: -64.2502 | Gamma_t: 0.000000
+[idea3_elite_buffer/seed0] Round 100/2000 | Val Loss: 0.0807 | Val R^2: -4.2114 | Gamma_t: 0.025915
+[idea3_elite_buffer/seed0] Round 200/2000 | Val Loss: 0.0338 | Val R^2: -1.1826 | Gamma_t: 0.006711
+[idea3_elite_buffer/seed0] Round 300/2000 | Val Loss: 0.0241 | Val R^2: -0.5553 | Gamma_t: 0.003293
+[idea3_elite_buffer/seed0] Round 400/2000 | Val Loss: 0.0212 | Val R^2: -0.3702 | Gamma_t: 0.003896
+[idea3_elite_buffer/seed0] Round 500/2000 | Val Loss: 0.0224 | Val R^2: -0.4486 | Gamma_t: 0.003852
+[idea3_elite_buffer/seed0] Round 600/2000 | Val Loss: 0.0197 | Val R^2: -0.2686 | Gamma_t: 0.003855
+[idea3_elite_buffer/seed0] Round 700/2000 | Val Loss: 0.0203 | Val R^2: -0.3119 | Gamma_t: 0.003514
+[idea3_elite_buffer/seed0] Round 800/2000 | Val Loss: 0.0175 | Val R^2: -0.1303 | Gamma_t: 0.002605
+[idea3_elite_buffer/seed0] Round 900/2000 | Val Loss: 0.0199 | Val R^2: -0.2828 | Gamma_t: 0.003058
+[idea3_elite_buffer/seed0] Round 1000/2000 | Val Loss: 0.0180 | Val R^2: -0.1642 | Gamma_t: 0.001940
+[idea3_elite_buffer/seed0] Round 1100/2000 | Val Loss: 0.0195 | Val R^2: -0.2577 | Gamma_t: 0.001714
+[idea3_elite_buffer/seed0] Round 1200/2000 | Val Loss: 0.0172 | Val R^2: -0.1083 | Gamma_t: 0.001657
+[idea3_elite_buffer/seed0] Round 1300/2000 | Val Loss: 0.0159 | Val R^2: -0.0293 | Gamma_t: 0.005525
+[idea3_elite_buffer/seed0] Round 1400/2000 | Val Loss: 0.0165 | Val R^2: -0.0684 | Gamma_t: 0.005966
+[idea3_elite_buffer/seed0] Round 1500/2000 | Val Loss: 0.0199 | Val R^2: -0.2868 | Gamma_t: 0.004318
+[idea3_elite_buffer/seed0] Round 1600/2000 | Val Loss: 0.0213 | Val R^2: -0.3756 | Gamma_t: 0.002526
+[idea3_elite_buffer/seed0] Round 1700/2000 | Val Loss: 0.0209 | Val R^2: -0.3461 | Gamma_t: 0.005004
+[idea3_elite_buffer/seed0] Round 1800/2000 | Val Loss: 0.0221 | Val R^2: -0.4280 | Gamma_t: 0.006472
+[idea3_elite_buffer/seed0] Round 1900/2000 | Val Loss: 0.0175 | Val R^2: -0.1307 | Gamma_t: 0.001818
+[idea3_elite_buffer/seed0] Round 2000/2000 | Val Loss: 0.0190 | Val R^2: -0.2252 | Gamma_t: 0.002073
+
+=== idea3_elite_buffer | hybrid n0=16 n1=4 | seed=1 ===
+[idea3_elite_buffer/seed1] Round 0/2000 | Val Loss: 0.9201 | Val R^2: -58.3994 | Gamma_t: 0.000000
+[idea3_elite_buffer/seed1] Round 100/2000 | Val Loss: 0.0791 | Val R^2: -4.1061 | Gamma_t: 0.014548
+[idea3_elite_buffer/seed1] Round 200/2000 | Val Loss: 0.0370 | Val R^2: -1.3885 | Gamma_t: 0.008508
+[idea3_elite_buffer/seed1] Round 300/2000 | Val Loss: 0.0239 | Val R^2: -0.5450 | Gamma_t: 0.010460
+[idea3_elite_buffer/seed1] Round 400/2000 | Val Loss: 0.0201 | Val R^2: -0.2970 | Gamma_t: 0.002036
+[idea3_elite_buffer/seed1] Round 500/2000 | Val Loss: 0.0180 | Val R^2: -0.1626 | Gamma_t: 0.003000
+[idea3_elite_buffer/seed1] Round 600/2000 | Val Loss: 0.0178 | Val R^2: -0.1470 | Gamma_t: 0.004781
+[idea3_elite_buffer/seed1] Round 700/2000 | Val Loss: 0.0182 | Val R^2: -0.1755 | Gamma_t: 0.013244
+[idea3_elite_buffer/seed1] Round 800/2000 | Val Loss: 0.0213 | Val R^2: -0.3766 | Gamma_t: 0.002255
+[idea3_elite_buffer/seed1] Round 900/2000 | Val Loss: 0.0221 | Val R^2: -0.4261 | Gamma_t: 0.005876
+[idea3_elite_buffer/seed1] Round 1000/2000 | Val Loss: 0.0217 | Val R^2: -0.4018 | Gamma_t: 0.005107
+[idea3_elite_buffer/seed1] Round 1100/2000 | Val Loss: 0.0202 | Val R^2: -0.3056 | Gamma_t: 0.004740
+[idea3_elite_buffer/seed1] Round 1200/2000 | Val Loss: 0.0204 | Val R^2: -0.3174 | Gamma_t: 0.006492
+[idea3_elite_buffer/seed1] Round 1300/2000 | Val Loss: 0.0220 | Val R^2: -0.4191 | Gamma_t: 0.003685
+[idea3_elite_buffer/seed1] Round 1400/2000 | Val Loss: 0.0191 | Val R^2: -0.2313 | Gamma_t: 0.001999
+[idea3_elite_buffer/seed1] Round 1500/2000 | Val Loss: 0.0175 | Val R^2: -0.1287 | Gamma_t: 0.007334
+[idea3_elite_buffer/seed1] Round 1600/2000 | Val Loss: 0.0173 | Val R^2: -0.1151 | Gamma_t: 0.003773
+[idea3_elite_buffer/seed1] Round 1700/2000 | Val Loss: 0.0228 | Val R^2: -0.4702 | Gamma_t: 0.003409
+[idea3_elite_buffer/seed1] Round 1800/2000 | Val Loss: 0.0205 | Val R^2: -0.3224 | Gamma_t: 0.007485
+[idea3_elite_buffer/seed1] Round 1900/2000 | Val Loss: 0.0182 | Val R^2: -0.1747 | Gamma_t: 0.002131
+[idea3_elite_buffer/seed1] Round 2000/2000 | Val Loss: 0.0208 | Val R^2: -0.3445 | Gamma_t: 0.002237
+
+=== idea3_elite_buffer | hybrid n0=16 n1=4 | seed=2 ===
+[idea3_elite_buffer/seed2] Round 0/2000 | Val Loss: 0.9930 | Val R^2: -63.1032 | Gamma_t: 0.000000
+[idea3_elite_buffer/seed2] Round 100/2000 | Val Loss: 0.0928 | Val R^2: -4.9935 | Gamma_t: 0.017305
+[idea3_elite_buffer/seed2] Round 200/2000 | Val Loss: 0.0493 | Val R^2: -2.1849 | Gamma_t: 0.014635
+[idea3_elite_buffer/seed2] Round 300/2000 | Val Loss: 0.0346 | Val R^2: -1.2316 | Gamma_t: 0.007668
+[idea3_elite_buffer/seed2] Round 400/2000 | Val Loss: 0.0282 | Val R^2: -0.8176 | Gamma_t: 0.008058
+[idea3_elite_buffer/seed2] Round 500/2000 | Val Loss: 0.0270 | Val R^2: -0.7417 | Gamma_t: 0.006319
+[idea3_elite_buffer/seed2] Round 600/2000 | Val Loss: 0.0228 | Val R^2: -0.4709 | Gamma_t: 0.003834
+[idea3_elite_buffer/seed2] Round 700/2000 | Val Loss: 0.0208 | Val R^2: -0.3443 | Gamma_t: 0.003478
+[idea3_elite_buffer/seed2] Round 800/2000 | Val Loss: 0.0188 | Val R^2: -0.2122 | Gamma_t: 0.003362
+[idea3_elite_buffer/seed2] Round 900/2000 | Val Loss: 0.0194 | Val R^2: -0.2546 | Gamma_t: 0.003246
+[idea3_elite_buffer/seed2] Round 1000/2000 | Val Loss: 0.0198 | Val R^2: -0.2792 | Gamma_t: 0.004824
+[idea3_elite_buffer/seed2] Round 1100/2000 | Val Loss: 0.0201 | Val R^2: -0.2970 | Gamma_t: 0.004296
+[idea3_elite_buffer/seed2] Round 1200/2000 | Val Loss: 0.0201 | Val R^2: -0.2970 | Gamma_t: 0.004670
+[idea3_elite_buffer/seed2] Round 1300/2000 | Val Loss: 0.0211 | Val R^2: -0.3646 | Gamma_t: 0.007368
+[idea3_elite_buffer/seed2] Round 1400/2000 | Val Loss: 0.0208 | Val R^2: -0.3427 | Gamma_t: 0.003868
+[idea3_elite_buffer/seed2] Round 1500/2000 | Val Loss: 0.0237 | Val R^2: -0.5312 | Gamma_t: 0.002353
+[idea3_elite_buffer/seed2] Round 1600/2000 | Val Loss: 0.0212 | Val R^2: -0.3692 | Gamma_t: 0.005659
+[idea3_elite_buffer/seed2] Round 1700/2000 | Val Loss: 0.0218 | Val R^2: -0.4061 | Gamma_t: 0.003714
+[idea3_elite_buffer/seed2] Round 1800/2000 | Val Loss: 0.0191 | Val R^2: -0.2325 | Gamma_t: 0.004642
+[idea3_elite_buffer/seed2] Round 1900/2000 | Val Loss: 0.0185 | Val R^2: -0.1973 | Gamma_t: 0.003199
+[idea3_elite_buffer/seed2] Round 2000/2000 | Val Loss: 0.0210 | Val R^2: -0.3548 | Gamma_t: 0.003232
+
+=== idea4_adaptive_mixing | hybrid n0=16 n1=4 | seed=0 ===
+[idea4_adaptive_mixing/seed0] Round 0/2000 | Val Loss: 1.0107 | Val R^2: -64.2502 | Gamma_t: 0.000000
+[idea4_adaptive_mixing/seed0] Round 100/2000 | Val Loss: 0.0735 | Val R^2: -3.7430 | Gamma_t: 0.007058
+[idea4_adaptive_mixing/seed0] Round 200/2000 | Val Loss: 0.0265 | Val R^2: -0.7076 | Gamma_t: 0.007758
+[idea4_adaptive_mixing/seed0] Round 300/2000 | Val Loss: 0.0198 | Val R^2: -0.2798 | Gamma_t: 0.006355
+[idea4_adaptive_mixing/seed0] Round 400/2000 | Val Loss: 0.0190 | Val R^2: -0.2291 | Gamma_t: 0.003469
+[idea4_adaptive_mixing/seed0] Round 500/2000 | Val Loss: 0.0179 | Val R^2: -0.1561 | Gamma_t: 0.001394
+[idea4_adaptive_mixing/seed0] Round 600/2000 | Val Loss: 0.0166 | Val R^2: -0.0748 | Gamma_t: 0.006317
+[idea4_adaptive_mixing/seed0] Round 700/2000 | Val Loss: 0.0175 | Val R^2: -0.1295 | Gamma_t: 0.004296
+[idea4_adaptive_mixing/seed0] Round 800/2000 | Val Loss: 0.0160 | Val R^2: -0.0334 | Gamma_t: 0.002596
+[idea4_adaptive_mixing/seed0] Round 900/2000 | Val Loss: 0.0160 | Val R^2: -0.0349 | Gamma_t: 0.002059
+[idea4_adaptive_mixing/seed0] Round 1000/2000 | Val Loss: 0.0168 | Val R^2: -0.0877 | Gamma_t: 0.001997
+[idea4_adaptive_mixing/seed0] Round 1100/2000 | Val Loss: 0.0154 | Val R^2: 0.0087 | Gamma_t: 0.001260
+[idea4_adaptive_mixing/seed0] Round 1200/2000 | Val Loss: 0.0152 | Val R^2: 0.0157 | Gamma_t: 0.001103
+[idea4_adaptive_mixing/seed0] Round 1300/2000 | Val Loss: 0.0161 | Val R^2: -0.0373 | Gamma_t: 0.009701
+[idea4_adaptive_mixing/seed0] Round 1400/2000 | Val Loss: 0.0148 | Val R^2: 0.0416 | Gamma_t: 0.002959
+[idea4_adaptive_mixing/seed0] Round 1500/2000 | Val Loss: 0.0163 | Val R^2: -0.0508 | Gamma_t: 0.002604
+[idea4_adaptive_mixing/seed0] Round 1600/2000 | Val Loss: 0.0151 | Val R^2: 0.0283 | Gamma_t: 0.001854
+[idea4_adaptive_mixing/seed0] Round 1700/2000 | Val Loss: 0.0151 | Val R^2: 0.0231 | Gamma_t: 0.002826
+[idea4_adaptive_mixing/seed0] Round 1800/2000 | Val Loss: 0.0149 | Val R^2: 0.0386 | Gamma_t: 0.001166
+[idea4_adaptive_mixing/seed0] Round 1900/2000 | Val Loss: 0.0157 | Val R^2: -0.0127 | Gamma_t: 0.001679
+[idea4_adaptive_mixing/seed0] Round 2000/2000 | Val Loss: 0.0183 | Val R^2: -0.1801 | Gamma_t: 0.002603
+
+=== idea4_adaptive_mixing | hybrid n0=16 n1=4 | seed=1 ===
+[idea4_adaptive_mixing/seed1] Round 0/2000 | Val Loss: 0.9201 | Val R^2: -58.3994 | Gamma_t: 0.000000
+[idea4_adaptive_mixing/seed1] Round 100/2000 | Val Loss: 0.0687 | Val R^2: -3.4364 | Gamma_t: 0.011295
+[idea4_adaptive_mixing/seed1] Round 200/2000 | Val Loss: 0.0307 | Val R^2: -0.9849 | Gamma_t: 0.002190
+[idea4_adaptive_mixing/seed1] Round 300/2000 | Val Loss: 0.0205 | Val R^2: -0.3218 | Gamma_t: 0.002301
+[idea4_adaptive_mixing/seed1] Round 400/2000 | Val Loss: 0.0172 | Val R^2: -0.1072 | Gamma_t: 0.001846
+[idea4_adaptive_mixing/seed1] Round 500/2000 | Val Loss: 0.0156 | Val R^2: -0.0041 | Gamma_t: 0.003895
+[idea4_adaptive_mixing/seed1] Round 600/2000 | Val Loss: 0.0164 | Val R^2: -0.0570 | Gamma_t: 0.001625
+[idea4_adaptive_mixing/seed1] Round 700/2000 | Val Loss: 0.0150 | Val R^2: 0.0338 | Gamma_t: 0.001209
+[idea4_adaptive_mixing/seed1] Round 800/2000 | Val Loss: 0.0167 | Val R^2: -0.0809 | Gamma_t: 0.002548
+[idea4_adaptive_mixing/seed1] Round 900/2000 | Val Loss: 0.0159 | Val R^2: -0.0240 | Gamma_t: 0.004063
+[idea4_adaptive_mixing/seed1] Round 1000/2000 | Val Loss: 0.0154 | Val R^2: 0.0085 | Gamma_t: 0.002394
+[idea4_adaptive_mixing/seed1] Round 1100/2000 | Val Loss: 0.0151 | Val R^2: 0.0221 | Gamma_t: 0.001861
+[idea4_adaptive_mixing/seed1] Round 1200/2000 | Val Loss: 0.0161 | Val R^2: -0.0412 | Gamma_t: 0.003750
+[idea4_adaptive_mixing/seed1] Round 1300/2000 | Val Loss: 0.0146 | Val R^2: 0.0566 | Gamma_t: 0.002193
+[idea4_adaptive_mixing/seed1] Round 1400/2000 | Val Loss: 0.0148 | Val R^2: 0.0430 | Gamma_t: 0.001178
+[idea4_adaptive_mixing/seed1] Round 1500/2000 | Val Loss: 0.0148 | Val R^2: 0.0443 | Gamma_t: 0.001072
+[idea4_adaptive_mixing/seed1] Round 1600/2000 | Val Loss: 0.0138 | Val R^2: 0.1071 | Gamma_t: 0.001481
+[idea4_adaptive_mixing/seed1] Round 1700/2000 | Val Loss: 0.0145 | Val R^2: 0.0625 | Gamma_t: 0.001191
+[idea4_adaptive_mixing/seed1] Round 1800/2000 | Val Loss: 0.0149 | Val R^2: 0.0391 | Gamma_t: 0.002357
+[idea4_adaptive_mixing/seed1] Round 1900/2000 | Val Loss: 0.0150 | Val R^2: 0.0305 | Gamma_t: 0.001345
+[idea4_adaptive_mixing/seed1] Round 2000/2000 | Val Loss: 0.0154 | Val R^2: 0.0040 | Gamma_t: 0.003275
+
+=== idea4_adaptive_mixing | hybrid n0=16 n1=4 | seed=2 ===
+[idea4_adaptive_mixing/seed2] Round 0/2000 | Val Loss: 0.9930 | Val R^2: -63.1032 | Gamma_t: 0.000000
+[idea4_adaptive_mixing/seed2] Round 100/2000 | Val Loss: 0.0630 | Val R^2: -3.0649 | Gamma_t: 0.013671
+[idea4_adaptive_mixing/seed2] Round 200/2000 | Val Loss: 0.0295 | Val R^2: -0.9051 | Gamma_t: 0.006525
+[idea4_adaptive_mixing/seed2] Round 300/2000 | Val Loss: 0.0230 | Val R^2: -0.4846 | Gamma_t: 0.005469
+[idea4_adaptive_mixing/seed2] Round 400/2000 | Val Loss: 0.0182 | Val R^2: -0.1776 | Gamma_t: 0.002146
+[idea4_adaptive_mixing/seed2] Round 500/2000 | Val Loss: 0.0181 | Val R^2: -0.1690 | Gamma_t: 0.002324
+[idea4_adaptive_mixing/seed2] Round 600/2000 | Val Loss: 0.0182 | Val R^2: -0.1720 | Gamma_t: 0.001396
+[idea4_adaptive_mixing/seed2] Round 700/2000 | Val Loss: 0.0173 | Val R^2: -0.1180 | Gamma_t: 0.003124
+[idea4_adaptive_mixing/seed2] Round 800/2000 | Val Loss: 0.0166 | Val R^2: -0.0724 | Gamma_t: 0.003814
+[idea4_adaptive_mixing/seed2] Round 900/2000 | Val Loss: 0.0184 | Val R^2: -0.1849 | Gamma_t: 0.002991
+[idea4_adaptive_mixing/seed2] Round 1000/2000 | Val Loss: 0.0171 | Val R^2: -0.1019 | Gamma_t: 0.002701
+[idea4_adaptive_mixing/seed2] Round 1100/2000 | Val Loss: 0.0156 | Val R^2: -0.0042 | Gamma_t: 0.001323
+[idea4_adaptive_mixing/seed2] Round 1200/2000 | Val Loss: 0.0150 | Val R^2: 0.0336 | Gamma_t: 0.004104
+[idea4_adaptive_mixing/seed2] Round 1300/2000 | Val Loss: 0.0166 | Val R^2: -0.0705 | Gamma_t: 0.004059
+[idea4_adaptive_mixing/seed2] Round 1400/2000 | Val Loss: 0.0159 | Val R^2: -0.0247 | Gamma_t: 0.002252
+[idea4_adaptive_mixing/seed2] Round 1500/2000 | Val Loss: 0.0171 | Val R^2: -0.1044 | Gamma_t: 0.001863
+[idea4_adaptive_mixing/seed2] Round 1600/2000 | Val Loss: 0.0160 | Val R^2: -0.0358 | Gamma_t: 0.001469
+[idea4_adaptive_mixing/seed2] Round 1700/2000 | Val Loss: 0.0150 | Val R^2: 0.0304 | Gamma_t: 0.002219
+[idea4_adaptive_mixing/seed2] Round 1800/2000 | Val Loss: 0.0165 | Val R^2: -0.0641 | Gamma_t: 0.003621
+[idea4_adaptive_mixing/seed2] Round 1900/2000 | Val Loss: 0.0175 | Val R^2: -0.1273 | Gamma_t: 0.002820
+[idea4_adaptive_mixing/seed2] Round 2000/2000 | Val Loss: 0.0171 | Val R^2: -0.1065 | Gamma_t: 0.004184
+Saved plot to results/yearmsd/ablation\ablation_loss.png
+Saved plot to results/yearmsd/ablation\ablation_metric.png
+Saved plot to results/yearmsd/ablation\ablation_consensus.png
+Saved plot to results/yearmsd/ablation\ablation_avg_q.png
+
+=== Ablation summary (final round, mean over seeds [0, 1, 2]) ===
+  baseline                        : val_loss=0.0222 (+/-0.0040)  val_R^2=-0.4323 (+/-0.2580)  avg_q=1.00
+  idea1_variance_weighted_merge   : val_loss=0.0120 (+/-0.0001)  val_R^2=0.2228 (+/-0.0037)  avg_q=1.00
+  idea2_adaptive_zo_budget        : val_loss=0.0171 (+/-0.0009)  val_R^2=-0.1022 (+/-0.0597)  avg_q=1.42
+  idea3_elite_buffer              : val_loss=0.0203 (+/-0.0011)  val_R^2=-0.3082 (+/-0.0720)  avg_q=1.00
+  idea4_adaptive_mixing           : val_loss=0.0169 (+/-0.0014)  val_R^2=-0.0942 (+/-0.0926)  avg_q=1.00

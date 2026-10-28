@@ -1,0 +1,359 @@
+PS C:\Users\donth\Desktop\hdo-extensions> python main.py --task cifar10 --mode ablation --seeds 0 1 2
+Task: cifar10 | input_dim=2048 | train=50000 | val=10000
+
+=== baseline | hybrid n0=16 n1=4 | seed=0 ===
+[baseline/seed0] Round 0/2000 | Val Loss: 2.3286 | Val accuracy(%): 6.9000 | Gamma_t: 0.000000
+[baseline/seed0] Round 100/2000 | Val Loss: 1.7826 | Val accuracy(%): 67.8200 | Gamma_t: 0.173867
+[baseline/seed0] Round 200/2000 | Val Loss: 1.4421 | Val accuracy(%): 76.2700 | Gamma_t: 0.147828
+[baseline/seed0] Round 300/2000 | Val Loss: 1.2060 | Val accuracy(%): 79.5100 | Gamma_t: 0.147927
+[baseline/seed0] Round 400/2000 | Val Loss: 1.0558 | Val accuracy(%): 81.0300 | Gamma_t: 0.139208
+[baseline/seed0] Round 500/2000 | Val Loss: 0.9400 | Val accuracy(%): 81.3500 | Gamma_t: 0.141579
+[baseline/seed0] Round 600/2000 | Val Loss: 0.8544 | Val accuracy(%): 82.1100 | Gamma_t: 0.145072
+[baseline/seed0] Round 700/2000 | Val Loss: 0.7896 | Val accuracy(%): 82.5300 | Gamma_t: 0.151585
+[baseline/seed0] Round 800/2000 | Val Loss: 0.7389 | Val accuracy(%): 83.1500 | Gamma_t: 0.153792
+[baseline/seed0] Round 900/2000 | Val Loss: 0.7023 | Val accuracy(%): 83.1800 | Gamma_t: 0.155809
+[baseline/seed0] Round 1000/2000 | Val Loss: 0.6667 | Val accuracy(%): 83.4300 | Gamma_t: 0.156827
+[baseline/seed0] Round 1100/2000 | Val Loss: 0.6372 | Val accuracy(%): 83.7500 | Gamma_t: 0.155515
+[baseline/seed0] Round 1200/2000 | Val Loss: 0.6135 | Val accuracy(%): 83.9200 | Gamma_t: 0.157706
+[baseline/seed0] Round 1300/2000 | Val Loss: 0.5940 | Val accuracy(%): 84.1700 | Gamma_t: 0.154506
+[baseline/seed0] Round 1400/2000 | Val Loss: 0.5775 | Val accuracy(%): 84.2900 | Gamma_t: 0.143318
+[baseline/seed0] Round 1500/2000 | Val Loss: 0.5633 | Val accuracy(%): 84.2400 | Gamma_t: 0.154265
+[baseline/seed0] Round 1600/2000 | Val Loss: 0.5527 | Val accuracy(%): 84.5500 | Gamma_t: 0.159389
+[baseline/seed0] Round 1700/2000 | Val Loss: 0.5403 | Val accuracy(%): 84.6800 | Gamma_t: 0.150255
+[baseline/seed0] Round 1800/2000 | Val Loss: 0.5305 | Val accuracy(%): 84.8200 | Gamma_t: 0.154776
+[baseline/seed0] Round 1900/2000 | Val Loss: 0.5223 | Val accuracy(%): 84.5300 | Gamma_t: 0.134358
+[baseline/seed0] Round 2000/2000 | Val Loss: 0.5122 | Val accuracy(%): 85.0100 | Gamma_t: 0.146056
+
+=== baseline | hybrid n0=16 n1=4 | seed=1 ===
+[baseline/seed1] Round 0/2000 | Val Loss: 2.3526 | Val accuracy(%): 6.4100 | Gamma_t: 0.000000
+[baseline/seed1] Round 100/2000 | Val Loss: 1.7792 | Val accuracy(%): 69.2700 | Gamma_t: 0.147381
+[baseline/seed1] Round 200/2000 | Val Loss: 1.4221 | Val accuracy(%): 78.0500 | Gamma_t: 0.146725
+[baseline/seed1] Round 300/2000 | Val Loss: 1.1950 | Val accuracy(%): 80.4200 | Gamma_t: 0.153270
+[baseline/seed1] Round 400/2000 | Val Loss: 1.0334 | Val accuracy(%): 81.3900 | Gamma_t: 0.152946
+[baseline/seed1] Round 500/2000 | Val Loss: 0.9250 | Val accuracy(%): 81.9700 | Gamma_t: 0.172176
+[baseline/seed1] Round 600/2000 | Val Loss: 0.8413 | Val accuracy(%): 82.5500 | Gamma_t: 0.135314
+[baseline/seed1] Round 700/2000 | Val Loss: 0.7774 | Val accuracy(%): 83.0800 | Gamma_t: 0.137962
+[baseline/seed1] Round 800/2000 | Val Loss: 0.7326 | Val accuracy(%): 83.2800 | Gamma_t: 0.153882
+[baseline/seed1] Round 900/2000 | Val Loss: 0.6957 | Val accuracy(%): 83.3900 | Gamma_t: 0.160713
+[baseline/seed1] Round 1000/2000 | Val Loss: 0.6645 | Val accuracy(%): 83.7800 | Gamma_t: 0.149330
+[baseline/seed1] Round 1100/2000 | Val Loss: 0.6369 | Val accuracy(%): 84.1400 | Gamma_t: 0.158815
+[baseline/seed1] Round 1200/2000 | Val Loss: 0.6137 | Val accuracy(%): 84.1900 | Gamma_t: 0.173730
+[baseline/seed1] Round 1300/2000 | Val Loss: 0.5924 | Val accuracy(%): 84.3800 | Gamma_t: 0.144864
+[baseline/seed1] Round 1400/2000 | Val Loss: 0.5766 | Val accuracy(%): 84.5700 | Gamma_t: 0.136067
+[baseline/seed1] Round 1500/2000 | Val Loss: 0.5632 | Val accuracy(%): 84.7800 | Gamma_t: 0.141900
+[baseline/seed1] Round 1600/2000 | Val Loss: 0.5507 | Val accuracy(%): 85.0200 | Gamma_t: 0.153876
+[baseline/seed1] Round 1700/2000 | Val Loss: 0.5407 | Val accuracy(%): 85.0800 | Gamma_t: 0.154936
+[baseline/seed1] Round 1800/2000 | Val Loss: 0.5309 | Val accuracy(%): 85.2200 | Gamma_t: 0.144896
+[baseline/seed1] Round 1900/2000 | Val Loss: 0.5221 | Val accuracy(%): 85.1900 | Gamma_t: 0.130024
+[baseline/seed1] Round 2000/2000 | Val Loss: 0.5136 | Val accuracy(%): 85.3700 | Gamma_t: 0.134198
+
+=== baseline | hybrid n0=16 n1=4 | seed=2 ===
+[baseline/seed2] Round 0/2000 | Val Loss: 2.3249 | Val accuracy(%): 10.2400 | Gamma_t: 0.000000
+[baseline/seed2] Round 100/2000 | Val Loss: 1.7710 | Val accuracy(%): 68.3500 | Gamma_t: 0.153244
+[baseline/seed2] Round 200/2000 | Val Loss: 1.4209 | Val accuracy(%): 77.6500 | Gamma_t: 0.144352
+[baseline/seed2] Round 300/2000 | Val Loss: 1.1878 | Val accuracy(%): 80.6200 | Gamma_t: 0.173221
+[baseline/seed2] Round 400/2000 | Val Loss: 1.0342 | Val accuracy(%): 81.7500 | Gamma_t: 0.147226
+[baseline/seed2] Round 500/2000 | Val Loss: 0.9206 | Val accuracy(%): 82.0900 | Gamma_t: 0.167311
+[baseline/seed2] Round 600/2000 | Val Loss: 0.8390 | Val accuracy(%): 82.5100 | Gamma_t: 0.126642
+[baseline/seed2] Round 700/2000 | Val Loss: 0.7726 | Val accuracy(%): 83.2300 | Gamma_t: 0.154239
+[baseline/seed2] Round 800/2000 | Val Loss: 0.7234 | Val accuracy(%): 83.5900 | Gamma_t: 0.147635
+[baseline/seed2] Round 900/2000 | Val Loss: 0.6894 | Val accuracy(%): 83.7500 | Gamma_t: 0.156447
+[baseline/seed2] Round 1000/2000 | Val Loss: 0.6562 | Val accuracy(%): 84.0600 | Gamma_t: 0.146832
+[baseline/seed2] Round 1100/2000 | Val Loss: 0.6297 | Val accuracy(%): 84.2000 | Gamma_t: 0.135451
+[baseline/seed2] Round 1200/2000 | Val Loss: 0.6083 | Val accuracy(%): 84.4500 | Gamma_t: 0.128222
+[baseline/seed2] Round 1300/2000 | Val Loss: 0.5892 | Val accuracy(%): 84.7200 | Gamma_t: 0.162912
+[baseline/seed2] Round 1400/2000 | Val Loss: 0.5730 | Val accuracy(%): 84.7200 | Gamma_t: 0.134780
+[baseline/seed2] Round 1500/2000 | Val Loss: 0.5611 | Val accuracy(%): 84.6600 | Gamma_t: 0.146029
+[baseline/seed2] Round 1600/2000 | Val Loss: 0.5506 | Val accuracy(%): 84.8400 | Gamma_t: 0.143794
+[baseline/seed2] Round 1700/2000 | Val Loss: 0.5403 | Val accuracy(%): 85.0400 | Gamma_t: 0.163826
+[baseline/seed2] Round 1800/2000 | Val Loss: 0.5289 | Val accuracy(%): 85.0200 | Gamma_t: 0.151683
+[baseline/seed2] Round 1900/2000 | Val Loss: 0.5183 | Val accuracy(%): 85.0100 | Gamma_t: 0.158160
+[baseline/seed2] Round 2000/2000 | Val Loss: 0.5092 | Val accuracy(%): 85.3500 | Gamma_t: 0.140107
+
+=== idea1_variance_weighted_merge | hybrid n0=16 n1=4 | seed=0 ===
+[idea1_variance_weighted_merge/seed0] Round 0/2000 | Val Loss: 2.3286 | Val accuracy(%): 6.9000 | Gamma_t: 0.000000
+[idea1_variance_weighted_merge/seed0] Round 100/2000 | Val Loss: 1.2277 | Val accuracy(%): 80.3600 | Gamma_t: 0.124224
+[idea1_variance_weighted_merge/seed0] Round 200/2000 | Val Loss: 0.8792 | Val accuracy(%): 82.8200 | Gamma_t: 0.118075
+[idea1_variance_weighted_merge/seed0] Round 300/2000 | Val Loss: 0.7245 | Val accuracy(%): 83.7000 | Gamma_t: 0.096453
+[idea1_variance_weighted_merge/seed0] Round 400/2000 | Val Loss: 0.6428 | Val accuracy(%): 84.4200 | Gamma_t: 0.128626
+[idea1_variance_weighted_merge/seed0] Round 500/2000 | Val Loss: 0.5896 | Val accuracy(%): 84.8400 | Gamma_t: 0.105754
+[idea1_variance_weighted_merge/seed0] Round 600/2000 | Val Loss: 0.5515 | Val accuracy(%): 85.1200 | Gamma_t: 0.122855
+[idea1_variance_weighted_merge/seed0] Round 700/2000 | Val Loss: 0.5244 | Val accuracy(%): 85.5300 | Gamma_t: 0.115583
+[idea1_variance_weighted_merge/seed0] Round 800/2000 | Val Loss: 0.5025 | Val accuracy(%): 85.7600 | Gamma_t: 0.099605
+[idea1_variance_weighted_merge/seed0] Round 900/2000 | Val Loss: 0.4864 | Val accuracy(%): 85.8900 | Gamma_t: 0.115385
+[idea1_variance_weighted_merge/seed0] Round 1000/2000 | Val Loss: 0.4722 | Val accuracy(%): 86.1000 | Gamma_t: 0.125367
+[idea1_variance_weighted_merge/seed0] Round 1100/2000 | Val Loss: 0.4596 | Val accuracy(%): 86.3300 | Gamma_t: 0.113550
+[idea1_variance_weighted_merge/seed0] Round 1200/2000 | Val Loss: 0.4491 | Val accuracy(%): 86.4400 | Gamma_t: 0.132611
+[idea1_variance_weighted_merge/seed0] Round 1300/2000 | Val Loss: 0.4407 | Val accuracy(%): 86.5400 | Gamma_t: 0.103025
+[idea1_variance_weighted_merge/seed0] Round 1400/2000 | Val Loss: 0.4331 | Val accuracy(%): 86.7600 | Gamma_t: 0.095929
+[idea1_variance_weighted_merge/seed0] Round 1500/2000 | Val Loss: 0.4259 | Val accuracy(%): 86.7600 | Gamma_t: 0.099356
+[idea1_variance_weighted_merge/seed0] Round 1600/2000 | Val Loss: 0.4198 | Val accuracy(%): 87.0000 | Gamma_t: 0.111505
+[idea1_variance_weighted_merge/seed0] Round 1700/2000 | Val Loss: 0.4136 | Val accuracy(%): 87.0500 | Gamma_t: 0.098188
+[idea1_variance_weighted_merge/seed0] Round 1800/2000 | Val Loss: 0.4083 | Val accuracy(%): 87.1000 | Gamma_t: 0.120845
+[idea1_variance_weighted_merge/seed0] Round 1900/2000 | Val Loss: 0.4033 | Val accuracy(%): 87.3100 | Gamma_t: 0.126709
+[idea1_variance_weighted_merge/seed0] Round 2000/2000 | Val Loss: 0.3989 | Val accuracy(%): 87.3500 | Gamma_t: 0.115235
+
+=== idea1_variance_weighted_merge | hybrid n0=16 n1=4 | seed=1 ===
+[idea1_variance_weighted_merge/seed1] Round 0/2000 | Val Loss: 2.3526 | Val accuracy(%): 6.4100 | Gamma_t: 0.000000
+[idea1_variance_weighted_merge/seed1] Round 100/2000 | Val Loss: 1.2289 | Val accuracy(%): 80.9900 | Gamma_t: 0.105630
+[idea1_variance_weighted_merge/seed1] Round 200/2000 | Val Loss: 0.8712 | Val accuracy(%): 82.8800 | Gamma_t: 0.089646
+[idea1_variance_weighted_merge/seed1] Round 300/2000 | Val Loss: 0.7200 | Val accuracy(%): 83.9100 | Gamma_t: 0.114420
+[idea1_variance_weighted_merge/seed1] Round 400/2000 | Val Loss: 0.6377 | Val accuracy(%): 84.3900 | Gamma_t: 0.111994
+[idea1_variance_weighted_merge/seed1] Round 500/2000 | Val Loss: 0.5853 | Val accuracy(%): 85.0500 | Gamma_t: 0.117004
+[idea1_variance_weighted_merge/seed1] Round 600/2000 | Val Loss: 0.5487 | Val accuracy(%): 85.4100 | Gamma_t: 0.089053
+[idea1_variance_weighted_merge/seed1] Round 700/2000 | Val Loss: 0.5221 | Val accuracy(%): 85.6500 | Gamma_t: 0.117504
+[idea1_variance_weighted_merge/seed1] Round 800/2000 | Val Loss: 0.5011 | Val accuracy(%): 85.8800 | Gamma_t: 0.098191
+[idea1_variance_weighted_merge/seed1] Round 900/2000 | Val Loss: 0.4841 | Val accuracy(%): 86.0700 | Gamma_t: 0.115060
+[idea1_variance_weighted_merge/seed1] Round 1000/2000 | Val Loss: 0.4698 | Val accuracy(%): 86.3100 | Gamma_t: 0.095582
+[idea1_variance_weighted_merge/seed1] Round 1100/2000 | Val Loss: 0.4580 | Val accuracy(%): 86.5800 | Gamma_t: 0.126630
+[idea1_variance_weighted_merge/seed1] Round 1200/2000 | Val Loss: 0.4473 | Val accuracy(%): 86.7300 | Gamma_t: 0.126328
+[idea1_variance_weighted_merge/seed1] Round 1300/2000 | Val Loss: 0.4382 | Val accuracy(%): 86.7400 | Gamma_t: 0.103184
+[idea1_variance_weighted_merge/seed1] Round 1400/2000 | Val Loss: 0.4305 | Val accuracy(%): 86.9200 | Gamma_t: 0.116314
+[idea1_variance_weighted_merge/seed1] Round 1500/2000 | Val Loss: 0.4235 | Val accuracy(%): 87.0700 | Gamma_t: 0.109422
+[idea1_variance_weighted_merge/seed1] Round 1600/2000 | Val Loss: 0.4174 | Val accuracy(%): 87.2200 | Gamma_t: 0.118991
+[idea1_variance_weighted_merge/seed1] Round 1700/2000 | Val Loss: 0.4118 | Val accuracy(%): 87.2800 | Gamma_t: 0.115025
+[idea1_variance_weighted_merge/seed1] Round 1800/2000 | Val Loss: 0.4062 | Val accuracy(%): 87.3600 | Gamma_t: 0.111624
+[idea1_variance_weighted_merge/seed1] Round 1900/2000 | Val Loss: 0.4011 | Val accuracy(%): 87.4300 | Gamma_t: 0.085018
+[idea1_variance_weighted_merge/seed1] Round 2000/2000 | Val Loss: 0.3970 | Val accuracy(%): 87.6100 | Gamma_t: 0.100676
+
+=== idea1_variance_weighted_merge | hybrid n0=16 n1=4 | seed=2 ===
+[idea1_variance_weighted_merge/seed2] Round 0/2000 | Val Loss: 2.3249 | Val accuracy(%): 10.2400 | Gamma_t: 0.000000
+[idea1_variance_weighted_merge/seed2] Round 100/2000 | Val Loss: 1.2228 | Val accuracy(%): 80.3100 | Gamma_t: 0.102175
+[idea1_variance_weighted_merge/seed2] Round 200/2000 | Val Loss: 0.8724 | Val accuracy(%): 82.6200 | Gamma_t: 0.119241
+[idea1_variance_weighted_merge/seed2] Round 300/2000 | Val Loss: 0.7204 | Val accuracy(%): 83.7000 | Gamma_t: 0.161476
+[idea1_variance_weighted_merge/seed2] Round 400/2000 | Val Loss: 0.6388 | Val accuracy(%): 84.3300 | Gamma_t: 0.133065
+[idea1_variance_weighted_merge/seed2] Round 500/2000 | Val Loss: 0.5863 | Val accuracy(%): 84.6500 | Gamma_t: 0.126207
+[idea1_variance_weighted_merge/seed2] Round 600/2000 | Val Loss: 0.5503 | Val accuracy(%): 85.3700 | Gamma_t: 0.083670
+[idea1_variance_weighted_merge/seed2] Round 700/2000 | Val Loss: 0.5223 | Val accuracy(%): 85.4700 | Gamma_t: 0.099491
+[idea1_variance_weighted_merge/seed2] Round 800/2000 | Val Loss: 0.5014 | Val accuracy(%): 85.8800 | Gamma_t: 0.117351
+[idea1_variance_weighted_merge/seed2] Round 900/2000 | Val Loss: 0.4846 | Val accuracy(%): 86.0800 | Gamma_t: 0.106325
+[idea1_variance_weighted_merge/seed2] Round 1000/2000 | Val Loss: 0.4704 | Val accuracy(%): 86.3000 | Gamma_t: 0.124779
+[idea1_variance_weighted_merge/seed2] Round 1100/2000 | Val Loss: 0.4580 | Val accuracy(%): 86.4800 | Gamma_t: 0.112010
+[idea1_variance_weighted_merge/seed2] Round 1200/2000 | Val Loss: 0.4478 | Val accuracy(%): 86.6000 | Gamma_t: 0.109727
+[idea1_variance_weighted_merge/seed2] Round 1300/2000 | Val Loss: 0.4388 | Val accuracy(%): 86.7500 | Gamma_t: 0.128237
+[idea1_variance_weighted_merge/seed2] Round 1400/2000 | Val Loss: 0.4308 | Val accuracy(%): 86.6900 | Gamma_t: 0.089048
+[idea1_variance_weighted_merge/seed2] Round 1500/2000 | Val Loss: 0.4241 | Val accuracy(%): 86.9500 | Gamma_t: 0.129001
+[idea1_variance_weighted_merge/seed2] Round 1600/2000 | Val Loss: 0.4180 | Val accuracy(%): 87.0400 | Gamma_t: 0.099243
+[idea1_variance_weighted_merge/seed2] Round 1700/2000 | Val Loss: 0.4123 | Val accuracy(%): 87.1500 | Gamma_t: 0.104579
+[idea1_variance_weighted_merge/seed2] Round 1800/2000 | Val Loss: 0.4066 | Val accuracy(%): 87.3000 | Gamma_t: 0.128332
+[idea1_variance_weighted_merge/seed2] Round 1900/2000 | Val Loss: 0.4019 | Val accuracy(%): 87.4400 | Gamma_t: 0.139306
+[idea1_variance_weighted_merge/seed2] Round 2000/2000 | Val Loss: 0.3971 | Val accuracy(%): 87.5900 | Gamma_t: 0.105047
+
+=== idea2_adaptive_zo_budget | hybrid n0=16 n1=4 | seed=0 ===
+[idea2_adaptive_zo_budget/seed0] Round 0/2000 | Val Loss: 2.3286 | Val accuracy(%): 6.9000 | Gamma_t: 0.000000
+[idea2_adaptive_zo_budget/seed0] Round 100/2000 | Val Loss: 1.7661 | Val accuracy(%): 67.0500 | Gamma_t: 0.171173
+[idea2_adaptive_zo_budget/seed0] Round 200/2000 | Val Loss: 1.4296 | Val accuracy(%): 78.0200 | Gamma_t: 0.139048
+[idea2_adaptive_zo_budget/seed0] Round 300/2000 | Val Loss: 1.1860 | Val accuracy(%): 81.2600 | Gamma_t: 0.145065
+[idea2_adaptive_zo_budget/seed0] Round 400/2000 | Val Loss: 1.0308 | Val accuracy(%): 81.8800 | Gamma_t: 0.145718
+[idea2_adaptive_zo_budget/seed0] Round 500/2000 | Val Loss: 0.9180 | Val accuracy(%): 82.4700 | Gamma_t: 0.157998
+[idea2_adaptive_zo_budget/seed0] Round 600/2000 | Val Loss: 0.8435 | Val accuracy(%): 82.7700 | Gamma_t: 0.133448
+[idea2_adaptive_zo_budget/seed0] Round 700/2000 | Val Loss: 0.7797 | Val accuracy(%): 83.1400 | Gamma_t: 0.163291
+[idea2_adaptive_zo_budget/seed0] Round 800/2000 | Val Loss: 0.7299 | Val accuracy(%): 83.4200 | Gamma_t: 0.140217
+[idea2_adaptive_zo_budget/seed0] Round 900/2000 | Val Loss: 0.6933 | Val accuracy(%): 83.7400 | Gamma_t: 0.153601
+[idea2_adaptive_zo_budget/seed0] Round 1000/2000 | Val Loss: 0.6610 | Val accuracy(%): 83.7700 | Gamma_t: 0.153588
+[idea2_adaptive_zo_budget/seed0] Round 1100/2000 | Val Loss: 0.6347 | Val accuracy(%): 83.8000 | Gamma_t: 0.159787
+[idea2_adaptive_zo_budget/seed0] Round 1200/2000 | Val Loss: 0.6121 | Val accuracy(%): 84.0700 | Gamma_t: 0.162099
+[idea2_adaptive_zo_budget/seed0] Round 1300/2000 | Val Loss: 0.5921 | Val accuracy(%): 84.1400 | Gamma_t: 0.158977
+[idea2_adaptive_zo_budget/seed0] Round 1400/2000 | Val Loss: 0.5759 | Val accuracy(%): 84.4800 | Gamma_t: 0.145573
+[idea2_adaptive_zo_budget/seed0] Round 1500/2000 | Val Loss: 0.5635 | Val accuracy(%): 84.4600 | Gamma_t: 0.152803
+[idea2_adaptive_zo_budget/seed0] Round 1600/2000 | Val Loss: 0.5518 | Val accuracy(%): 84.3600 | Gamma_t: 0.148292
+[idea2_adaptive_zo_budget/seed0] Round 1700/2000 | Val Loss: 0.5414 | Val accuracy(%): 84.7000 | Gamma_t: 0.138273
+[idea2_adaptive_zo_budget/seed0] Round 1800/2000 | Val Loss: 0.5299 | Val accuracy(%): 84.6500 | Gamma_t: 0.154002
+[idea2_adaptive_zo_budget/seed0] Round 1900/2000 | Val Loss: 0.5212 | Val accuracy(%): 84.7400 | Gamma_t: 0.143293
+[idea2_adaptive_zo_budget/seed0] Round 2000/2000 | Val Loss: 0.5126 | Val accuracy(%): 84.9500 | Gamma_t: 0.157865
+
+=== idea2_adaptive_zo_budget | hybrid n0=16 n1=4 | seed=1 ===
+[idea2_adaptive_zo_budget/seed1] Round 0/2000 | Val Loss: 2.3526 | Val accuracy(%): 6.4100 | Gamma_t: 0.000000
+[idea2_adaptive_zo_budget/seed1] Round 100/2000 | Val Loss: 1.7661 | Val accuracy(%): 71.1200 | Gamma_t: 0.140235
+[idea2_adaptive_zo_budget/seed1] Round 200/2000 | Val Loss: 1.4047 | Val accuracy(%): 78.6900 | Gamma_t: 0.150439
+[idea2_adaptive_zo_budget/seed1] Round 300/2000 | Val Loss: 1.1800 | Val accuracy(%): 80.9300 | Gamma_t: 0.152523
+[idea2_adaptive_zo_budget/seed1] Round 400/2000 | Val Loss: 1.0171 | Val accuracy(%): 81.7400 | Gamma_t: 0.154309
+[idea2_adaptive_zo_budget/seed1] Round 500/2000 | Val Loss: 0.9030 | Val accuracy(%): 82.2400 | Gamma_t: 0.169583
+[idea2_adaptive_zo_budget/seed1] Round 600/2000 | Val Loss: 0.8233 | Val accuracy(%): 82.7600 | Gamma_t: 0.156239
+[idea2_adaptive_zo_budget/seed1] Round 700/2000 | Val Loss: 0.7667 | Val accuracy(%): 82.9300 | Gamma_t: 0.134764
+[idea2_adaptive_zo_budget/seed1] Round 800/2000 | Val Loss: 0.7174 | Val accuracy(%): 83.5000 | Gamma_t: 0.138743
+[idea2_adaptive_zo_budget/seed1] Round 900/2000 | Val Loss: 0.6814 | Val accuracy(%): 83.6600 | Gamma_t: 0.152900
+[idea2_adaptive_zo_budget/seed1] Round 1000/2000 | Val Loss: 0.6479 | Val accuracy(%): 83.8400 | Gamma_t: 0.154140
+[idea2_adaptive_zo_budget/seed1] Round 1100/2000 | Val Loss: 0.6242 | Val accuracy(%): 84.1200 | Gamma_t: 0.157409
+[idea2_adaptive_zo_budget/seed1] Round 1200/2000 | Val Loss: 0.6003 | Val accuracy(%): 84.2100 | Gamma_t: 0.156750
+[idea2_adaptive_zo_budget/seed1] Round 1300/2000 | Val Loss: 0.5848 | Val accuracy(%): 84.3500 | Gamma_t: 0.147091
+[idea2_adaptive_zo_budget/seed1] Round 1400/2000 | Val Loss: 0.5710 | Val accuracy(%): 84.4300 | Gamma_t: 0.150693
+[idea2_adaptive_zo_budget/seed1] Round 1500/2000 | Val Loss: 0.5557 | Val accuracy(%): 84.5600 | Gamma_t: 0.142986
+[idea2_adaptive_zo_budget/seed1] Round 1600/2000 | Val Loss: 0.5449 | Val accuracy(%): 84.7500 | Gamma_t: 0.136112
+[idea2_adaptive_zo_budget/seed1] Round 1700/2000 | Val Loss: 0.5345 | Val accuracy(%): 84.8700 | Gamma_t: 0.140220
+[idea2_adaptive_zo_budget/seed1] Round 1800/2000 | Val Loss: 0.5240 | Val accuracy(%): 85.0900 | Gamma_t: 0.154600
+[idea2_adaptive_zo_budget/seed1] Round 1900/2000 | Val Loss: 0.5168 | Val accuracy(%): 85.0500 | Gamma_t: 0.133334
+[idea2_adaptive_zo_budget/seed1] Round 2000/2000 | Val Loss: 0.5076 | Val accuracy(%): 85.1300 | Gamma_t: 0.146801
+
+=== idea2_adaptive_zo_budget | hybrid n0=16 n1=4 | seed=2 ===
+[idea2_adaptive_zo_budget/seed2] Round 0/2000 | Val Loss: 2.3249 | Val accuracy(%): 10.2400 | Gamma_t: 0.000000
+[idea2_adaptive_zo_budget/seed2] Round 100/2000 | Val Loss: 1.7641 | Val accuracy(%): 71.2300 | Gamma_t: 0.163833
+[idea2_adaptive_zo_budget/seed2] Round 200/2000 | Val Loss: 1.4120 | Val accuracy(%): 78.1600 | Gamma_t: 0.162771
+[idea2_adaptive_zo_budget/seed2] Round 300/2000 | Val Loss: 1.1788 | Val accuracy(%): 80.3200 | Gamma_t: 0.178574
+[idea2_adaptive_zo_budget/seed2] Round 400/2000 | Val Loss: 1.0240 | Val accuracy(%): 81.4300 | Gamma_t: 0.155962
+[idea2_adaptive_zo_budget/seed2] Round 500/2000 | Val Loss: 0.9097 | Val accuracy(%): 81.7800 | Gamma_t: 0.163758
+[idea2_adaptive_zo_budget/seed2] Round 600/2000 | Val Loss: 0.8316 | Val accuracy(%): 82.4900 | Gamma_t: 0.139525
+[idea2_adaptive_zo_budget/seed2] Round 700/2000 | Val Loss: 0.7746 | Val accuracy(%): 82.7300 | Gamma_t: 0.140739
+[idea2_adaptive_zo_budget/seed2] Round 800/2000 | Val Loss: 0.7262 | Val accuracy(%): 83.0000 | Gamma_t: 0.146874
+[idea2_adaptive_zo_budget/seed2] Round 900/2000 | Val Loss: 0.6896 | Val accuracy(%): 83.4400 | Gamma_t: 0.160802
+[idea2_adaptive_zo_budget/seed2] Round 1000/2000 | Val Loss: 0.6615 | Val accuracy(%): 83.5300 | Gamma_t: 0.157147
+[idea2_adaptive_zo_budget/seed2] Round 1100/2000 | Val Loss: 0.6351 | Val accuracy(%): 83.6600 | Gamma_t: 0.147280
+[idea2_adaptive_zo_budget/seed2] Round 1200/2000 | Val Loss: 0.6118 | Val accuracy(%): 84.1700 | Gamma_t: 0.156617
+[idea2_adaptive_zo_budget/seed2] Round 1300/2000 | Val Loss: 0.5925 | Val accuracy(%): 84.3800 | Gamma_t: 0.146336
+[idea2_adaptive_zo_budget/seed2] Round 1400/2000 | Val Loss: 0.5772 | Val accuracy(%): 84.2600 | Gamma_t: 0.147166
+[idea2_adaptive_zo_budget/seed2] Round 1500/2000 | Val Loss: 0.5618 | Val accuracy(%): 84.4100 | Gamma_t: 0.142875
+[idea2_adaptive_zo_budget/seed2] Round 1600/2000 | Val Loss: 0.5480 | Val accuracy(%): 84.7200 | Gamma_t: 0.146451
+[idea2_adaptive_zo_budget/seed2] Round 1700/2000 | Val Loss: 0.5363 | Val accuracy(%): 84.8900 | Gamma_t: 0.160355
+[idea2_adaptive_zo_budget/seed2] Round 1800/2000 | Val Loss: 0.5261 | Val accuracy(%): 85.0300 | Gamma_t: 0.142767
+[idea2_adaptive_zo_budget/seed2] Round 1900/2000 | Val Loss: 0.5180 | Val accuracy(%): 85.0300 | Gamma_t: 0.144466
+[idea2_adaptive_zo_budget/seed2] Round 2000/2000 | Val Loss: 0.5077 | Val accuracy(%): 85.0000 | Gamma_t: 0.128644
+
+=== idea3_elite_buffer | hybrid n0=16 n1=4 | seed=0 ===
+[idea3_elite_buffer/seed0] Round 0/2000 | Val Loss: 2.3286 | Val accuracy(%): 6.9000 | Gamma_t: 0.000000
+[idea3_elite_buffer/seed0] Round 100/2000 | Val Loss: 1.7898 | Val accuracy(%): 68.5400 | Gamma_t: 0.168917
+[idea3_elite_buffer/seed0] Round 200/2000 | Val Loss: 1.4451 | Val accuracy(%): 76.9500 | Gamma_t: 0.146331
+[idea3_elite_buffer/seed0] Round 300/2000 | Val Loss: 1.2081 | Val accuracy(%): 79.8000 | Gamma_t: 0.135376
+[idea3_elite_buffer/seed0] Round 400/2000 | Val Loss: 1.0551 | Val accuracy(%): 81.2400 | Gamma_t: 0.131894
+[idea3_elite_buffer/seed0] Round 500/2000 | Val Loss: 0.9386 | Val accuracy(%): 81.7900 | Gamma_t: 0.150453
+[idea3_elite_buffer/seed0] Round 600/2000 | Val Loss: 0.8535 | Val accuracy(%): 82.6100 | Gamma_t: 0.146339
+[idea3_elite_buffer/seed0] Round 700/2000 | Val Loss: 0.7918 | Val accuracy(%): 82.9100 | Gamma_t: 0.159080
+[idea3_elite_buffer/seed0] Round 800/2000 | Val Loss: 0.7416 | Val accuracy(%): 83.1300 | Gamma_t: 0.156889
+[idea3_elite_buffer/seed0] Round 900/2000 | Val Loss: 0.7019 | Val accuracy(%): 83.5500 | Gamma_t: 0.149894
+[idea3_elite_buffer/seed0] Round 1000/2000 | Val Loss: 0.6687 | Val accuracy(%): 83.6600 | Gamma_t: 0.143234
+[idea3_elite_buffer/seed0] Round 1100/2000 | Val Loss: 0.6406 | Val accuracy(%): 83.9800 | Gamma_t: 0.145532
+[idea3_elite_buffer/seed0] Round 1200/2000 | Val Loss: 0.6193 | Val accuracy(%): 84.1000 | Gamma_t: 0.158859
+[idea3_elite_buffer/seed0] Round 1300/2000 | Val Loss: 0.6013 | Val accuracy(%): 84.2800 | Gamma_t: 0.146386
+[idea3_elite_buffer/seed0] Round 1400/2000 | Val Loss: 0.5845 | Val accuracy(%): 84.2100 | Gamma_t: 0.143526
+[idea3_elite_buffer/seed0] Round 1500/2000 | Val Loss: 0.5693 | Val accuracy(%): 84.4100 | Gamma_t: 0.124164
+[idea3_elite_buffer/seed0] Round 1600/2000 | Val Loss: 0.5546 | Val accuracy(%): 84.6200 | Gamma_t: 0.127925
+[idea3_elite_buffer/seed0] Round 1700/2000 | Val Loss: 0.5433 | Val accuracy(%): 84.6900 | Gamma_t: 0.160273
+[idea3_elite_buffer/seed0] Round 1800/2000 | Val Loss: 0.5330 | Val accuracy(%): 84.9100 | Gamma_t: 0.148027
+[idea3_elite_buffer/seed0] Round 1900/2000 | Val Loss: 0.5238 | Val accuracy(%): 85.1100 | Gamma_t: 0.152194
+[idea3_elite_buffer/seed0] Round 2000/2000 | Val Loss: 0.5154 | Val accuracy(%): 85.1900 | Gamma_t: 0.138943
+
+=== idea3_elite_buffer | hybrid n0=16 n1=4 | seed=1 ===
+[idea3_elite_buffer/seed1] Round 0/2000 | Val Loss: 2.3526 | Val accuracy(%): 6.4100 | Gamma_t: 0.000000
+[idea3_elite_buffer/seed1] Round 100/2000 | Val Loss: 1.7955 | Val accuracy(%): 69.5900 | Gamma_t: 0.158925
+[idea3_elite_buffer/seed1] Round 200/2000 | Val Loss: 1.4407 | Val accuracy(%): 77.3600 | Gamma_t: 0.156736
+[idea3_elite_buffer/seed1] Round 300/2000 | Val Loss: 1.1945 | Val accuracy(%): 80.2200 | Gamma_t: 0.144088
+[idea3_elite_buffer/seed1] Round 400/2000 | Val Loss: 1.0351 | Val accuracy(%): 81.1100 | Gamma_t: 0.162167
+[idea3_elite_buffer/seed1] Round 500/2000 | Val Loss: 0.9179 | Val accuracy(%): 81.6500 | Gamma_t: 0.175349
+[idea3_elite_buffer/seed1] Round 600/2000 | Val Loss: 0.8389 | Val accuracy(%): 82.2200 | Gamma_t: 0.158547
+[idea3_elite_buffer/seed1] Round 700/2000 | Val Loss: 0.7778 | Val accuracy(%): 82.6800 | Gamma_t: 0.134740
+[idea3_elite_buffer/seed1] Round 800/2000 | Val Loss: 0.7319 | Val accuracy(%): 83.2700 | Gamma_t: 0.145556
+[idea3_elite_buffer/seed1] Round 900/2000 | Val Loss: 0.6926 | Val accuracy(%): 83.4400 | Gamma_t: 0.146430
+[idea3_elite_buffer/seed1] Round 1000/2000 | Val Loss: 0.6607 | Val accuracy(%): 83.8100 | Gamma_t: 0.160084
+[idea3_elite_buffer/seed1] Round 1100/2000 | Val Loss: 0.6363 | Val accuracy(%): 84.0000 | Gamma_t: 0.155098
+[idea3_elite_buffer/seed1] Round 1200/2000 | Val Loss: 0.6127 | Val accuracy(%): 84.1000 | Gamma_t: 0.171901
+[idea3_elite_buffer/seed1] Round 1300/2000 | Val Loss: 0.5962 | Val accuracy(%): 84.4300 | Gamma_t: 0.138394
+[idea3_elite_buffer/seed1] Round 1400/2000 | Val Loss: 0.5784 | Val accuracy(%): 84.5200 | Gamma_t: 0.151421
+[idea3_elite_buffer/seed1] Round 1500/2000 | Val Loss: 0.5645 | Val accuracy(%): 84.7000 | Gamma_t: 0.154590
+[idea3_elite_buffer/seed1] Round 1600/2000 | Val Loss: 0.5502 | Val accuracy(%): 85.0100 | Gamma_t: 0.144950
+[idea3_elite_buffer/seed1] Round 1700/2000 | Val Loss: 0.5398 | Val accuracy(%): 84.9300 | Gamma_t: 0.133096
+[idea3_elite_buffer/seed1] Round 1800/2000 | Val Loss: 0.5290 | Val accuracy(%): 84.8300 | Gamma_t: 0.148789
+[idea3_elite_buffer/seed1] Round 1900/2000 | Val Loss: 0.5170 | Val accuracy(%): 85.2200 | Gamma_t: 0.128404
+[idea3_elite_buffer/seed1] Round 2000/2000 | Val Loss: 0.5083 | Val accuracy(%): 85.3800 | Gamma_t: 0.140565
+
+=== idea3_elite_buffer | hybrid n0=16 n1=4 | seed=2 ===
+[idea3_elite_buffer/seed2] Round 0/2000 | Val Loss: 2.3249 | Val accuracy(%): 10.2400 | Gamma_t: 0.000000
+[idea3_elite_buffer/seed2] Round 100/2000 | Val Loss: 1.7767 | Val accuracy(%): 68.2000 | Gamma_t: 0.152677
+[idea3_elite_buffer/seed2] Round 200/2000 | Val Loss: 1.4235 | Val accuracy(%): 77.1700 | Gamma_t: 0.148517
+[idea3_elite_buffer/seed2] Round 300/2000 | Val Loss: 1.1906 | Val accuracy(%): 79.8500 | Gamma_t: 0.183154
+[idea3_elite_buffer/seed2] Round 400/2000 | Val Loss: 1.0239 | Val accuracy(%): 81.3700 | Gamma_t: 0.153304
+[idea3_elite_buffer/seed2] Round 500/2000 | Val Loss: 0.9116 | Val accuracy(%): 82.2100 | Gamma_t: 0.147562
+[idea3_elite_buffer/seed2] Round 600/2000 | Val Loss: 0.8329 | Val accuracy(%): 82.4800 | Gamma_t: 0.127978
+[idea3_elite_buffer/seed2] Round 700/2000 | Val Loss: 0.7716 | Val accuracy(%): 82.8300 | Gamma_t: 0.144971
+[idea3_elite_buffer/seed2] Round 800/2000 | Val Loss: 0.7214 | Val accuracy(%): 83.3100 | Gamma_t: 0.137255
+[idea3_elite_buffer/seed2] Round 900/2000 | Val Loss: 0.6828 | Val accuracy(%): 83.4500 | Gamma_t: 0.149066
+[idea3_elite_buffer/seed2] Round 1000/2000 | Val Loss: 0.6520 | Val accuracy(%): 83.7700 | Gamma_t: 0.142797
+[idea3_elite_buffer/seed2] Round 1100/2000 | Val Loss: 0.6270 | Val accuracy(%): 83.9700 | Gamma_t: 0.148188
+[idea3_elite_buffer/seed2] Round 1200/2000 | Val Loss: 0.6032 | Val accuracy(%): 84.3500 | Gamma_t: 0.160299
+[idea3_elite_buffer/seed2] Round 1300/2000 | Val Loss: 0.5828 | Val accuracy(%): 84.5200 | Gamma_t: 0.159483
+[idea3_elite_buffer/seed2] Round 1400/2000 | Val Loss: 0.5667 | Val accuracy(%): 84.6500 | Gamma_t: 0.132404
+[idea3_elite_buffer/seed2] Round 1500/2000 | Val Loss: 0.5532 | Val accuracy(%): 84.6200 | Gamma_t: 0.126006
+[idea3_elite_buffer/seed2] Round 1600/2000 | Val Loss: 0.5424 | Val accuracy(%): 84.7500 | Gamma_t: 0.132005
+[idea3_elite_buffer/seed2] Round 1700/2000 | Val Loss: 0.5312 | Val accuracy(%): 85.1600 | Gamma_t: 0.165619
+[idea3_elite_buffer/seed2] Round 1800/2000 | Val Loss: 0.5214 | Val accuracy(%): 85.1600 | Gamma_t: 0.147726
+[idea3_elite_buffer/seed2] Round 1900/2000 | Val Loss: 0.5108 | Val accuracy(%): 85.3700 | Gamma_t: 0.140304
+[idea3_elite_buffer/seed2] Round 2000/2000 | Val Loss: 0.5038 | Val accuracy(%): 85.4600 | Gamma_t: 0.128259
+
+=== idea4_adaptive_mixing | hybrid n0=16 n1=4 | seed=0 ===
+[idea4_adaptive_mixing/seed0] Round 0/2000 | Val Loss: 2.3286 | Val accuracy(%): 6.9000 | Gamma_t: 0.000000
+[idea4_adaptive_mixing/seed0] Round 100/2000 | Val Loss: 1.7087 | Val accuracy(%): 70.8900 | Gamma_t: 0.171465
+[idea4_adaptive_mixing/seed0] Round 200/2000 | Val Loss: 1.3463 | Val accuracy(%): 78.2200 | Gamma_t: 0.147543
+[idea4_adaptive_mixing/seed0] Round 300/2000 | Val Loss: 1.1108 | Val accuracy(%): 80.4500 | Gamma_t: 0.146578
+[idea4_adaptive_mixing/seed0] Round 400/2000 | Val Loss: 0.9656 | Val accuracy(%): 81.7100 | Gamma_t: 0.142511
+[idea4_adaptive_mixing/seed0] Round 500/2000 | Val Loss: 0.8591 | Val accuracy(%): 82.1000 | Gamma_t: 0.128514
+[idea4_adaptive_mixing/seed0] Round 600/2000 | Val Loss: 0.7814 | Val accuracy(%): 82.6200 | Gamma_t: 0.143212
+[idea4_adaptive_mixing/seed0] Round 700/2000 | Val Loss: 0.7245 | Val accuracy(%): 83.0500 | Gamma_t: 0.147129
+[idea4_adaptive_mixing/seed0] Round 800/2000 | Val Loss: 0.6795 | Val accuracy(%): 83.5000 | Gamma_t: 0.138596
+[idea4_adaptive_mixing/seed0] Round 900/2000 | Val Loss: 0.6476 | Val accuracy(%): 83.6000 | Gamma_t: 0.152511
+[idea4_adaptive_mixing/seed0] Round 1000/2000 | Val Loss: 0.6170 | Val accuracy(%): 83.9300 | Gamma_t: 0.153710
+[idea4_adaptive_mixing/seed0] Round 1100/2000 | Val Loss: 0.5917 | Val accuracy(%): 84.3400 | Gamma_t: 0.149275
+[idea4_adaptive_mixing/seed0] Round 1200/2000 | Val Loss: 0.5717 | Val accuracy(%): 84.3400 | Gamma_t: 0.139825
+[idea4_adaptive_mixing/seed0] Round 1300/2000 | Val Loss: 0.5546 | Val accuracy(%): 84.5700 | Gamma_t: 0.146019
+[idea4_adaptive_mixing/seed0] Round 1400/2000 | Val Loss: 0.5406 | Val accuracy(%): 84.5900 | Gamma_t: 0.137901
+[idea4_adaptive_mixing/seed0] Round 1500/2000 | Val Loss: 0.5284 | Val accuracy(%): 84.7900 | Gamma_t: 0.141206
+[idea4_adaptive_mixing/seed0] Round 1600/2000 | Val Loss: 0.5193 | Val accuracy(%): 85.0700 | Gamma_t: 0.154738
+[idea4_adaptive_mixing/seed0] Round 1700/2000 | Val Loss: 0.5088 | Val accuracy(%): 85.2900 | Gamma_t: 0.146884
+[idea4_adaptive_mixing/seed0] Round 1800/2000 | Val Loss: 0.5002 | Val accuracy(%): 85.3700 | Gamma_t: 0.150228
+[idea4_adaptive_mixing/seed0] Round 1900/2000 | Val Loss: 0.4934 | Val accuracy(%): 85.3000 | Gamma_t: 0.131686
+[idea4_adaptive_mixing/seed0] Round 2000/2000 | Val Loss: 0.4842 | Val accuracy(%): 85.6200 | Gamma_t: 0.138413
+
+=== idea4_adaptive_mixing | hybrid n0=16 n1=4 | seed=1 ===
+[idea4_adaptive_mixing/seed1] Round 0/2000 | Val Loss: 2.3526 | Val accuracy(%): 6.4100 | Gamma_t: 0.000000
+[idea4_adaptive_mixing/seed1] Round 100/2000 | Val Loss: 1.7010 | Val accuracy(%): 72.9300 | Gamma_t: 0.149932
+[idea4_adaptive_mixing/seed1] Round 200/2000 | Val Loss: 1.3234 | Val accuracy(%): 79.3200 | Gamma_t: 0.143325
+[idea4_adaptive_mixing/seed1] Round 300/2000 | Val Loss: 1.0977 | Val accuracy(%): 81.2000 | Gamma_t: 0.147413
+[idea4_adaptive_mixing/seed1] Round 400/2000 | Val Loss: 0.9436 | Val accuracy(%): 82.2000 | Gamma_t: 0.150344
+[idea4_adaptive_mixing/seed1] Round 500/2000 | Val Loss: 0.8437 | Val accuracy(%): 82.5600 | Gamma_t: 0.165144
+[idea4_adaptive_mixing/seed1] Round 600/2000 | Val Loss: 0.7684 | Val accuracy(%): 83.0700 | Gamma_t: 0.133082
+[idea4_adaptive_mixing/seed1] Round 700/2000 | Val Loss: 0.7132 | Val accuracy(%): 83.5500 | Gamma_t: 0.131568
+[idea4_adaptive_mixing/seed1] Round 800/2000 | Val Loss: 0.6735 | Val accuracy(%): 83.8600 | Gamma_t: 0.145678
+[idea4_adaptive_mixing/seed1] Round 900/2000 | Val Loss: 0.6409 | Val accuracy(%): 83.8600 | Gamma_t: 0.152130
+[idea4_adaptive_mixing/seed1] Round 1000/2000 | Val Loss: 0.6144 | Val accuracy(%): 84.3100 | Gamma_t: 0.142325
+[idea4_adaptive_mixing/seed1] Round 1100/2000 | Val Loss: 0.5906 | Val accuracy(%): 84.7000 | Gamma_t: 0.151432
+[idea4_adaptive_mixing/seed1] Round 1200/2000 | Val Loss: 0.5704 | Val accuracy(%): 84.6400 | Gamma_t: 0.159312
+[idea4_adaptive_mixing/seed1] Round 1300/2000 | Val Loss: 0.5526 | Val accuracy(%): 84.9500 | Gamma_t: 0.138024
+[idea4_adaptive_mixing/seed1] Round 1400/2000 | Val Loss: 0.5392 | Val accuracy(%): 85.1400 | Gamma_t: 0.129420
+[idea4_adaptive_mixing/seed1] Round 1500/2000 | Val Loss: 0.5278 | Val accuracy(%): 85.2700 | Gamma_t: 0.134329
+[idea4_adaptive_mixing/seed1] Round 1600/2000 | Val Loss: 0.5167 | Val accuracy(%): 85.5700 | Gamma_t: 0.148698
+[idea4_adaptive_mixing/seed1] Round 1700/2000 | Val Loss: 0.5079 | Val accuracy(%): 85.5400 | Gamma_t: 0.150538
+[idea4_adaptive_mixing/seed1] Round 1800/2000 | Val Loss: 0.4994 | Val accuracy(%): 85.6500 | Gamma_t: 0.142341
+[idea4_adaptive_mixing/seed1] Round 1900/2000 | Val Loss: 0.4920 | Val accuracy(%): 85.6900 | Gamma_t: 0.125294
+[idea4_adaptive_mixing/seed1] Round 2000/2000 | Val Loss: 0.4843 | Val accuracy(%): 85.7300 | Gamma_t: 0.124188
+
+=== idea4_adaptive_mixing | hybrid n0=16 n1=4 | seed=2 ===
+[idea4_adaptive_mixing/seed2] Round 0/2000 | Val Loss: 2.3249 | Val accuracy(%): 10.2400 | Gamma_t: 0.000000
+[idea4_adaptive_mixing/seed2] Round 100/2000 | Val Loss: 1.7000 | Val accuracy(%): 71.4300 | Gamma_t: 0.150210
+[idea4_adaptive_mixing/seed2] Round 200/2000 | Val Loss: 1.3268 | Val accuracy(%): 79.1900 | Gamma_t: 0.134868
+[idea4_adaptive_mixing/seed2] Round 300/2000 | Val Loss: 1.0936 | Val accuracy(%): 81.3700 | Gamma_t: 0.156861
+[idea4_adaptive_mixing/seed2] Round 400/2000 | Val Loss: 0.9462 | Val accuracy(%): 82.2300 | Gamma_t: 0.138699
+[idea4_adaptive_mixing/seed2] Round 500/2000 | Val Loss: 0.8416 | Val accuracy(%): 82.5700 | Gamma_t: 0.160897
+[idea4_adaptive_mixing/seed2] Round 600/2000 | Val Loss: 0.7680 | Val accuracy(%): 82.9600 | Gamma_t: 0.113035
+[idea4_adaptive_mixing/seed2] Round 700/2000 | Val Loss: 0.7097 | Val accuracy(%): 83.5100 | Gamma_t: 0.144588
+[idea4_adaptive_mixing/seed2] Round 800/2000 | Val Loss: 0.6670 | Val accuracy(%): 83.8700 | Gamma_t: 0.138926
+[idea4_adaptive_mixing/seed2] Round 900/2000 | Val Loss: 0.6370 | Val accuracy(%): 84.1700 | Gamma_t: 0.148972
+[idea4_adaptive_mixing/seed2] Round 1000/2000 | Val Loss: 0.6087 | Val accuracy(%): 84.4400 | Gamma_t: 0.142876
+[idea4_adaptive_mixing/seed2] Round 1100/2000 | Val Loss: 0.5854 | Val accuracy(%): 84.5700 | Gamma_t: 0.132269
+[idea4_adaptive_mixing/seed2] Round 1200/2000 | Val Loss: 0.5669 | Val accuracy(%): 84.8000 | Gamma_t: 0.125851
+[idea4_adaptive_mixing/seed2] Round 1300/2000 | Val Loss: 0.5507 | Val accuracy(%): 85.0200 | Gamma_t: 0.160555
+[idea4_adaptive_mixing/seed2] Round 1400/2000 | Val Loss: 0.5365 | Val accuracy(%): 85.2100 | Gamma_t: 0.131105
+[idea4_adaptive_mixing/seed2] Round 1500/2000 | Val Loss: 0.5262 | Val accuracy(%): 85.1500 | Gamma_t: 0.138039
+[idea4_adaptive_mixing/seed2] Round 1600/2000 | Val Loss: 0.5173 | Val accuracy(%): 85.3300 | Gamma_t: 0.127728
+[idea4_adaptive_mixing/seed2] Round 1700/2000 | Val Loss: 0.5081 | Val accuracy(%): 85.4000 | Gamma_t: 0.160466
+[idea4_adaptive_mixing/seed2] Round 1800/2000 | Val Loss: 0.4981 | Val accuracy(%): 85.4300 | Gamma_t: 0.147091
+[idea4_adaptive_mixing/seed2] Round 1900/2000 | Val Loss: 0.4889 | Val accuracy(%): 85.5500 | Gamma_t: 0.151966
+[idea4_adaptive_mixing/seed2] Round 2000/2000 | Val Loss: 0.4808 | Val accuracy(%): 85.9800 | Gamma_t: 0.132343
+Saved plot to results/cifar10/ablation\ablation_loss.png
+Saved plot to results/cifar10/ablation\ablation_metric.png
+Saved plot to results/cifar10/ablation\ablation_consensus.png
+Saved plot to results/cifar10/ablation\ablation_avg_q.png
+
+=== Ablation summary (final round, mean over seeds [0, 1, 2]) ===
+  baseline                        : val_loss=0.5117 (+/-0.0023)  val_accuracy(%)=85.2433 (+/-0.2023)  avg_q=1.00
+  idea1_variance_weighted_merge   : val_loss=0.3976 (+/-0.0011)  val_accuracy(%)=87.5167 (+/-0.1447)  avg_q=1.00
+  idea2_adaptive_zo_budget        : val_loss=0.5093 (+/-0.0029)  val_accuracy(%)=85.0267 (+/-0.0929)  avg_q=1.04
+  idea3_elite_buffer              : val_loss=0.5092 (+/-0.0058)  val_accuracy(%)=85.3433 (+/-0.1387)  avg_q=1.00
+  idea4_adaptive_mixing           : val_loss=0.4831 (+/-0.0020)  val_accuracy(%)=85.7767 (+/-0.1845)  avg_q=1.00
+PS C:\Users\donth\Desktop\hdo-extensions>
