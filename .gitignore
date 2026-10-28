@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Datasets (downloaded locally, not committed — see README.md for sources)
+data/
+
+# Large run outputs (keep small summary files if you want, but raw dumps stay local)
+results/**/raw_history_all_seeds.json
+
+# OS / editor noise
+.DS_Store
+.vscode/
