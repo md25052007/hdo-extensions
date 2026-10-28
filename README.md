@@ -6,9 +6,6 @@ Can Be Jointly Leveraged for Faster Convergence"** (Talaei, Nadiradze,
 Alistarh — AAAI 2025, [arXiv:2210.07703](https://arxiv.org/abs/2210.07703),
 [author repo](https://github.com/ShayanTalaei/HDO)).
 
-Team: D Maithreya (241AI013), Maharshi Kundu (241AI022), Siddhanth R Naik
-(241AI040), Sai (241AI0xx) — Guide: Dr. Bhawana Rudra.
-
 The paper's HDO Algorithm 1 runs a population of nodes in a gossip
 (population-protocol) network. Each node holds a local copy of the model
 and improves it with either a **first-order (FO)** gradient (exact
