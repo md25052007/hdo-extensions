@@ -5,8 +5,8 @@ __pycache__/
 # Datasets (downloaded locally, not committed — see README.md for sources)
 data/
 
-# Large run outputs (keep small summary files if you want, but raw dumps stay local)
-results/**/raw_history_all_seeds.json
+# (raw_history_all_seeds.json used to be excluded here as "too heavy" — in
+# practice it's only ~250KB per run, so it's committed like everything else.)
 
 # OS / editor noise
 .DS_Store
