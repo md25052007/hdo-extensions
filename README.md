@@ -271,8 +271,12 @@ they catch bugs in the shared novelty code in seconds instead of minutes.
 ## Project status
 
 - **Phase 0** (author's-repo baseline, `github.com/ShayanTalaei/HDO` run
-  directly) — not started yet; independent of Phases 1/2, can run in
-  parallel. Instructions in `phase0_author_repo/SETUP_INSTRUCTIONS.md`.
+  directly) — optional; not run. The `baseline` row already in every
+  ablation table above (all four novelty flags off, same
+  code/data/seeds/hardware as the four ideas) is the apples-to-apples
+  comparison the project actually needs, so this isn't required — kept
+  here as a ready-to-run option, not a pending task. Instructions in
+  `phase0_author_repo/SETUP_INSTRUCTIONS.md`.
 - **Phase 1** (Year-MSD) — baseline + full 4-idea ablation suite done on
   real data, 3 seeds. See Results above.
 - **Phase 2** (CIFAR-10) — full 4-idea ablation suite done on real data
