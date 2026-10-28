@@ -3,24 +3,101 @@
 Course project for Optimization Techniques (NITK Surathkal), extending
 **"Hybrid Decentralized Optimization: First- and Zeroth-Order Optimizers
 Can Be Jointly Leveraged for Faster Convergence"** (Talaei, Nadiradze,
-Alistarh — AAAI 2025, [arXiv:2210.07703](https://arxiv.org/abs/2210.07703)).
+Alistarh — AAAI 2025, [arXiv:2210.07703](https://arxiv.org/abs/2210.07703),
+[author repo](https://github.com/ShayanTalaei/HDO)).
 
 Team: D Maithreya (241AI013), Maharshi Kundu (241AI022), Siddhanth R Naik
 (241AI040), Sai (241AI0xx) — Guide: Dr. Bhawana Rudra.
 
+The paper's HDO Algorithm 1 runs a population of nodes in a gossip
+(population-protocol) network. Each node holds a local copy of the model
+and improves it with either a **first-order (FO)** gradient (exact
+backprop) or a **zeroth-order (ZO)** gradient (estimated from random
+finite differences, no backprop needed). Pairs of nodes interact at
+random, each takes a local gradient step, then they average their
+parameters together. The paper's result is that a *hybrid* population —
+mostly cheap ZO nodes plus a few FO nodes — converges almost as fast as
+an all-FO population, at a fraction of the gradient-computation cost.
+
+This repo reproduces that baseline and tests four original extensions to
+it (below), on two real datasets the paper itself uses.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    subgraph data["Data layer"]
+        YM["data_yearmsd.py\nYear-MSD (regression)"]
+        C10["data_cifar10.py\nCIFAR-10 / ResNet50 features (classification)"]
+    end
+
+    subgraph task["Task abstraction — tasks.py"]
+        TS["TaskSpec\nloss_fn · eval_fn · metric_name"]
+    end
+
+    YM --> TS
+    C10 --> TS
+
+    subgraph pop["Population — experiment.py"]
+        BP["build_population()"]
+        NZ["ZO nodes"]
+        NF["FO nodes"]
+        BP --> NZ
+        BP --> NF
+    end
+
+    TS --> BP
+
+    subgraph loop["Simulation loop — simulate.py (run per round)"]
+        direction TB
+        INT["interact(node_i, node_j)"]
+        GRAD["compute_node_gradient() — estimators.py"]
+        STEP["local step + pairwise merge"]
+        INT --> GRAD --> STEP
+    end
+
+    NZ --> loop
+    NF --> loop
+
+    subgraph novelty["Novelty extensions — novelty/config.py (independent flags)"]
+        V["① variance_weighted_merge"]
+        Q["② adaptive_zo_budget"]
+        E["③ elite_buffer"]
+        X["④ adaptive_mixing"]
+    end
+
+    V -. "reweights" .-> STEP
+    Q -. "resizes q" .-> GRAD
+    E -. "anchors ZO step" .-> GRAD
+    X -. "blends FO+ZO" .-> GRAD
+
+    loop --> EVAL["evaluate() / compute_metrics()"]
+    EVAL --> OUT["results/&lt;task&gt;/&lt;mode&gt;/\nplots + JSON (aggregate.py, plot_utils.py)"]
+```
+
+All four novelty flags default to **off** in `NoveltyConfig`, in which
+case the simulation reduces exactly to the paper's baseline Algorithm 1 —
+every ablation is a controlled, single-flag diff against that baseline.
+
 ## What's in here
 
-- `src/` — a from-scratch simulation of HDO's Algorithm 1, generalized
-  across tasks (`src/tasks.py`), with four optional novelty extensions
-  that are all off by default (`src/novelty/config.py`). With every flag
-  off, this reduces exactly to the paper's baseline algorithm.
+- `src/` — the simulation above: `tasks.py` (task abstraction), `node.py`
+  (per-node state, incl. novelty state), `estimators.py` (FO/ZO gradient
+  computation), `simulate.py` (the round/interaction loop),
+  `experiment.py` (population construction + ablation-suite runner),
+  `novelty/config.py` (the four flags), `data_yearmsd.py` /
+  `data_cifar10.py` / `data_common.py` (loaders), `aggregate.py` /
+  `plot_utils.py` (multi-seed summarizing + plotting).
 - `phase0_author_repo/` — instructions for running the paper's own repo
   (`github.com/ShayanTalaei/HDO`) directly, as an independent baseline.
   That repo is cloned elsewhere, not into this one.
 - `scripts/extract_cifar10_features.py` — one-time ResNet50 feature
   extraction for the CIFAR-10 task.
-- `tests/` — fast synthetic smoke tests (no real data needed) that
-  exercise every novelty path end-to-end.
+- `tests/` — 6 unit tests (`test_estimators.py`) plus 2 synthetic
+  end-to-end smoke tests (no real data needed) that exercise every
+  novelty path at both task scales (d=90 and d=2048).
+- `results/<task>/<mode>/` — committed outputs of every run below:
+  plots, aggregated summary JSON, and the raw per-seed/per-round history.
 
 ## The four novelty ideas (`src/novelty/config.py`)
 
@@ -36,6 +113,49 @@ Team: D Maithreya (241AI013), Maharshi Kundu (241AI022), Siddhanth R Naik
 4. **`adaptive_mixing`** — a subset of ZO nodes also compute an FO-style
    gradient and blend the two via a cosine-similarity-gated, EMA-smoothed
    weight `alpha_t`.
+
+## Results
+
+Hybrid population (n0=16 ZO / n1=4 FO), 2000 rounds, 3 seeds, mean ± std
+at the final round. Full per-seed/per-round data and all four plots per
+task (loss, metric, consensus potential, adaptive-q) are committed under
+`results/<task>/ablation/`.
+
+### Year-MSD (regression — val R²)
+
+| config | val_loss | val_R² | avg_q |
+|---|---|---|---|
+| baseline | 0.0222 (±0.0040) | −0.4324 (±0.2580) | 1.00 |
+| **idea1_variance_weighted_merge** | **0.0120** (±0.0001) | **0.2228** (±0.0037) | 1.00 |
+| **idea2_adaptive_zo_budget** | **0.0119** (±0.0000) | **0.2304** (±0.0012) | 10.00 |
+| idea3_elite_buffer | 0.0203 (±0.0011) | −0.3082 (±0.0720) | 1.00 |
+| idea4_adaptive_mixing | 0.0169 (±0.0014) | −0.0942 (±0.0926) | 1.00 |
+
+![Year-MSD ablation: validation R²](results/yearmsd/ablation/ablation_metric.png)
+
+### CIFAR-10 (classification — val accuracy, via frozen ResNet50 features)
+
+| config | val_loss | val_accuracy(%) | avg_q |
+|---|---|---|---|
+| baseline | 0.5117 (±0.0023) | 85.24 (±0.20) | 1.00 |
+| **idea1_variance_weighted_merge** | **0.3976** (±0.0011) | **87.52** (±0.14) | 1.00 |
+| **idea2_adaptive_zo_budget** | **0.4082** (±0.0007) | **87.01** (±0.04) | 10.00 |
+| idea3_elite_buffer | 0.5092 (±0.0058) | 85.34 (±0.14) | 1.00 |
+| idea4_adaptive_mixing | 0.4831 (±0.0020) | 85.78 (±0.18) | 1.00 |
+
+![CIFAR-10 ablation: validation accuracy](results/cifar10/ablation/ablation_metric.png)
+
+**Reading these together:** idea 1 (variance-weighted merge) and idea 2
+(adaptive ZO budget) both clearly and reproducibly beat baseline on
+*both* tasks — one regression, one classification, d=90 and d=2048 —
+with tight cross-seed variance, which is the strongest kind of evidence
+a course-project ablation can offer (not a single-task fluke). Idea 3
+(elite buffer) is statistically indistinguishable from baseline on both
+tasks. Idea 4 (adaptive mixing) is a smaller but consistent improvement
+in between. Idea 2's `avg_q` saturates at `max_q=10` on both tasks —
+every run hits the cap rather than settling below it, which is worth a
+follow-up sweep with a higher `max_q` rather than taking 10.00 as a
+natural equilibrium.
 
 ## Datasets — sources and exact save locations
 
@@ -60,10 +180,13 @@ never gets committed).
 
 ### CIFAR-10 (classification task, via frozen ResNet50 features)
 
-- **Source:** standard CIFAR-10, downloaded automatically by
-  `torchvision.datasets.CIFAR10` — you don't need to manually fetch this
-  one, just run the extraction script below and it downloads to
-  `data/cifar10_raw/` on its own.
+- **Source:** standard CIFAR-10. `torchvision.datasets.CIFAR10` downloads
+  it automatically, via the extraction script below — if that download is
+  slow from your network, you can instead fetch
+  `https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz` yourself and
+  place it at `hdo-extensions/data/cifar10_raw/cifar-10-python.tar.gz`
+  (the script skips downloading once it finds a file there with the
+  matching checksum).
 - **Steps:**
   ```
   pip install -r requirements.txt
@@ -80,7 +203,13 @@ never gets committed).
   ```
   Run this once; the actual HDO simulation afterward only ever touches
   these small `.pt` files, never the raw images or the ResNet50 again —
-  that's what keeps zeroth-order's extra forward passes affordable.
+  that's what keeps zeroth-order's extra forward passes affordable. It
+  uses CUDA automatically if available (`torch.cuda.is_available()`) —
+  worth installing a CUDA build of `torch`/`torchvision` for this step if
+  you have an NVIDIA GPU, since it's a one-off ResNet50 forward pass over
+  60k images and is far faster on GPU; the HDO simulation itself
+  afterward is CPU-bound regardless (its model is a single tiny linear
+  layer, GPU doesn't help there).
 - **Disclosed deviation from the paper:** the paper trains its own
   ResNet50 first (SGD, 150 epochs) and then freezes it; we use an
   off-the-shelf ImageNet-pretrained ResNet50 instead. Reasonable for a
@@ -90,19 +219,19 @@ never gets committed).
 ## Known hyperparameter gotcha (found while testing on the real Year-MSD data)
 
 The original MNIST-tuned default was `eta=0.05`. On Year-MSD specifically
-— an **unbounded MSE regression loss**, unlike MNIST's bounded
-cross-entropy — that value diverges: the ZO estimator's variance combined
-with that large a step size pushed the loss to ~1e17 within ~100 rounds
-for the `all-ZO` and `hybrid` configs (verified on the real downloaded
-file, not just synthetic data). `main.py`'s default is now `eta=0.01`,
-which is empirically stable and converges cleanly for all three
-population types. There's also a `--max_grad_norm` safety net (default
-50.0) that clips any single node's gradient estimate before it's applied,
-as defense-in-depth against the same failure mode if you sweep `eta`
-higher in your own experiments — it rarely binds at sane learning rates,
-it's just there so a bad hyperparameter choice degrades gracefully
-instead of silently overflowing to `inf`. If you deliberately want the
-old unsafe default back, pass `--eta 0.05` explicitly.
+— an **unbounded MSE regression loss**, unlike MNIST's or CIFAR-10's
+bounded cross-entropy — that value diverges: the ZO estimator's variance
+combined with that large a step size pushed the loss to ~1e17 within ~100
+rounds for the `all-ZO` and `hybrid` configs (verified on the real
+downloaded file, not just synthetic data). `main.py`'s default is now
+`eta=0.01`, which is empirically stable and converges cleanly for all
+three population types on both tasks. There's also a `--max_grad_norm`
+safety net (default 50.0) that clips any single node's gradient estimate
+before it's applied, as defense-in-depth against the same failure mode if
+you sweep `eta` higher in your own experiments — it rarely binds at sane
+learning rates, it's just there so a bad hyperparameter choice degrades
+gracefully instead of silently overflowing to `inf`. If you deliberately
+want the old unsafe default back, pass `--eta 0.05` explicitly.
 
 ## Running it
 
@@ -127,8 +256,14 @@ they catch bugs in the shared novelty code in seconds instead of minutes.
 
 ## Project status
 
-See the project's working notes (kept outside this repo) for the current
-phase status. Phase 0 (author's-repo baseline) is independent of Phases 1/2
-and can run in parallel; Phases 1 (Year-MSD) and 2 (CIFAR-10) share the
-same `src/` code, so validate on Year-MSD before trusting CIFAR-10 runs of
-the same novelty code.
+- **Phase 0** (author's-repo baseline, `github.com/ShayanTalaei/HDO` run
+  directly) — not started yet; independent of Phases 1/2, can run in
+  parallel. Instructions in `phase0_author_repo/SETUP_INSTRUCTIONS.md`.
+- **Phase 1** (Year-MSD) — baseline + full 4-idea ablation suite done on
+  real data, 3 seeds. See Results above.
+- **Phase 2** (CIFAR-10) — full 4-idea ablation suite done on real data
+  (ResNet50 features), 3 seeds. See Results above.
+- No combination of ideas is planned — the project stops at the 4
+  individual ablations per the agreed plan.
+
+See `PROGRESS.md` for the commit-by-commit log of how this was built.
